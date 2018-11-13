@@ -1,13 +1,8 @@
 # Informatik - 12.1 - Projektseite
 
-[Einführung](#einführung)  
-[1. Der Weg](#1)  
-[2. Das Ziel](#2)  
-[3. Die Hürden](#3)
-
-### <a name="einführung"></a>Einführung
-
-
+[1. Der Weg](##1)  
+[2. Das Ziel](##2)  
+[3. Die Hürden](##3)
 
 
 ### <a name="1"></a>Der Weg
