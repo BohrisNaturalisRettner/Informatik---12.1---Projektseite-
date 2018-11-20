@@ -4,7 +4,7 @@ von Tim Wähner und David Rettmann, 12e
 
 ## Inhalt
 
-[1. Einleitung](#1) 
+[1. Einleitung](#1)                   
 [2. Beschreibung](#2)  
 [3. Erläuterung](#3)   
 [4. Probleme und Lösungen](#4) 
