@@ -1,15 +1,15 @@
 # Informatik - 12.1 - Projektseite
 
-[1. Der Weg](##1)  
-[2. Das Ziel](##2)  
+[1. Unser Ziel](##1)  
+[2. Der Weg](##2)  
 [3. Die Hürden](##3)
 
 
-### <a name="1"></a>Der Weg
+### <a name="1"></a>Unser Ziel
 
 
 
-### <a name="2"></a>Das Ziel 
+### <a name="2"></a>Der Weg
 
 
 
