@@ -1,7 +1,8 @@
 # Projektseite "Smooosh"
 von Tim Wähner und David Rettmann, 12e
 
-##Inhalt
+
+## Inhalt
 [1. Unser Ziel](#1)  
 [2. Der Weg](#2)  
 [3. Die Hürden](#3)
