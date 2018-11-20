@@ -4,20 +4,20 @@ von Tim Wähner und David Rettmann, 12e
 
 ## Inhalt
 
-[1. Einleitung](#e) 
-[2. Unser Ziel](#1)  
-[3. Der Weg](#2)   
-[4. Die Hürden](#3) 
+[1. Einleitung](#1) 
+[2. Beschreibung](#2)  
+[3. Erläuterung](#3)   
+[4. Probleme und Lösungen](#4) 
 
 
-## Einleitung<a name="e"></a>
+## Einleitung<a name="1"></a>
 
 
-## Unser Ziel<a name="1"></a>
+## Beschreibung<a name="2"></a>
 
 
-## Der Weg<a name="2"></a>
+## Erläuterung<a name="3"></a>
 
 
-## Die Hürden<a name="3"></a>
+## Probleme und Lösungen<a name="4"></a>
 jhg
