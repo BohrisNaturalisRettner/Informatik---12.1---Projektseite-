@@ -18,7 +18,34 @@ da es eine Blockprogrammiersprache ist und wir dort erste Erfahrungen sammeln un
 
 ## Beschreibung<a name="2"></a>
 
+Das Grundprinzip des Spiels "Smooosh" ist angelehnt an das Spiel "Super Smash Bros.". Es geht darum den Gegenspieler von der Spielfläche herunterzukicken. Wir haben jedoch unsers
 
+- Startmenü (mit Taste)
+- Spielermenü 1 (Auswahl Charaktere)
+- Spielermenü 2 (Auswahl Charaktere) 
+- Spielstart
+- Steuerung Player 1 "wasd" 
+- Steuerung Player 2 "Pfeiltasten"
+- Gravitation 
+- Doppelsprung
+- Flugzeug
+- Schüsse
+  - Steuerung:
+    - Player 1 "q""e"
+    - Player 2 "alt" "shift"
+  - Verschiebt Spieler 
+  - links/rechts
+- Tode
+  - unten
+- Böden
+  - Kollision
+- Barrier
+- Gegenseitige Verschiebung der Spieler
+
+
+
+
+## Design 
 ## Erläuterung<a name="3"></a>
 
 
