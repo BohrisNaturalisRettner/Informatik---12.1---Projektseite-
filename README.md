@@ -23,7 +23,9 @@ Auf dieser Seite werden wir das Spiel zunächst [beschreiben](#2) und daraufhin 
 
 Startet man unser Spiel, gelangt man zunächst in ein [Startmenü](#Menüs). Um Fortzufahren muss man nun "space" drücken. Damit gelangt man in das [Spielermenü](#Menüs) 1, in dem sich "Player 1" einen Charakter aussuchen kann, den er spielen möchte. Die Charaktere unterscheiden sich lediglich im Aussehen, aber nicht in den Fähigkeiten. Nachdem er Einen per Mausklick ausgewählt hat, steht "Player 2" im [Spielermenü](#Menüs) 2 vor der gleichen Entscheidung. Haben beide einen Charakter ausgewählt, startet das Spiel.                     
                                                                                                                                        
-Die [Steuerung](#Steuerung) für "Player 1" liegt auf den Tasten "W" für den Sprung, "A" für eine Bewegung nach links, "D" für eine Bewegung nach rechts und "S" für einen noch schnelleren Fall. Für "Player 2" liegt die Steuerung in der gleichen Formation auf den Pfeiltasten "up", "left", "right" und "down".                                                                                         
+Die [Steuerung](#Steuerung) für "Player 1" liegt auf den Tasten "W" für den Sprung, "A" für eine Bewegung nach links, "D" für eine Bewegung nach rechts und "S" für einen noch schnelleren Fall. Für "Player 2" liegt die Steuerung in der gleichen Formation auf den Pfeiltasten "up", "left", "right" und "down".          
+
+<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/TAstatur%20endg%C3%BCltig.jpg" alt="image" width="1500">
                                                                                                                                       
 Im Spiel herrscht eine generelle Beschleunigung nach unten, sprich eine ["Gravitation"](#Gravitation). Die Tasten "S" für "Player 1" und "down" für "Player 2" geben dem Charakter einen extra Schub, sodass sie noch schneller fallen.                                          
                                                                                                                                     
