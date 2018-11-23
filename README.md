@@ -303,7 +303,7 @@ if ((elk.isTouching(powerup)) && (powerup.visible===true)) {
 
 #### Roter BlitzPowerup<a name="RedBolt"></a>
 
-<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/RedBolt.png" alt="image" width="300">  
+<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/RedBolt.png" alt="image" width="100">  
 
 Wenn der Rote Blitz Powerup aktiviert wird, wird der Gegenspieler stark nach unten beschleunigt, was das Springen verhindert:
 ```
@@ -315,7 +315,7 @@ https://youtu.be/-xrsTx3qcIk
 
 #### Grüner Blitz Powerup<a name="GreenBolt"></a>
 
-<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/GreenBolt.png" alt="image" width="300">
+<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/GreenBolt.png" alt="image" width="100">
 
 Bei der Aktivierung des Grünen Blitz Powerups, werden die Sprungvariablen des auslösenden Spielers gleich Null gesetzt, sodass dieser unbegrenzt springen kann:
 ```
@@ -327,7 +327,7 @@ https://youtu.be/-4X9b7YCLho
 
 #### Roter Schild Powerup<a name="RedShield"></a>
 
-<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/RedShield.png" alt="image" width="300">
+<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/RedShield.png" alt="image" width="100">
 
 Der Rote Schild Powerup verhindert ein Schießen des Gegenspielers, indem er die "Nachladevariablen" des Gegenspielers gleich Null setzt:
 ```
@@ -342,7 +342,7 @@ https://youtu.be/OFgQbxa9s6o
 
 #### Grüner Schild Powerup<a name="GreenShield"></a>
 
-<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/GreenSHield.png" alt="image" width="300">
+<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/GreenSHield.png" alt="image" width="100">
 
 Wird der grüne Schild Powerup aktiviert, passieren gleich mehrere Dinge. Es werden zum einen die Schussgeschwindigkeit erhöht und die Nachladezeit, durch hohe Werte in den "Nachladevariablen" stark verringert. Außerdem wird der Gegenspieler bei Kontakt mit dem Projektil so versetzt, dass er sofort stirbt:
 ```
@@ -369,7 +369,7 @@ https://youtu.be/fRlSWS0Md9c
 
 #### Roter Stern Powerup<a name="RedStar"></a>
 
-<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/RedStar.png" alt="image" width="300">
+<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/RedStar.png" alt="image" width="100">
 
 Der Rote Stern Powerup verkleinert den Gegenspieler:
 ```
@@ -385,7 +385,7 @@ https://youtu.be/XN6scC1JFoU
 
 #### Grüner Stern Powerup<a name="GreenStar"></a>
 
-<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/GreenStar.png" alt="image" width="300">
+<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/GreenStar.png" alt="image" width="100">
 
 Der Grüne Stern Powerup vergrößert den auslösenden Spieler:
 ```
