@@ -54,12 +54,21 @@ Mit den beiden Spielermenüs haben wir es sehr ähnlich gehandhabt. Auch diese h
 
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/Spieler%202%20auswahl.jpg" alt="image" width="500">
 
+Die Animationen der Charaktere haben wir schlussendlich vor die Sprites der Spielermenüs gesetzt und als Buttons programmiert um die Charaktere mit einem Mausklick auswählen zu können. Beispielsweise folgt der Code für Spieler 1 ("nini).
 
-
-
-
-
-
+```
+ if (player1.visible===true) {
+    if (mousePressedOver(playerselect11)) {
+      nini.setAnimation("elk");
+    }
+    if (mousePressedOver(playerselect12)) {
+      nini.setAnimation("cow_1");
+    }
+    if (mousePressedOver(playerselect13)) {
+      nini.setAnimation("elephant_happy_1");
+    }
+    drawSprites();
+```
 
 
 ### Die Steuerung<a name="Steuerung"></a>
