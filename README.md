@@ -211,6 +211,9 @@ if (keyWentDown("q")&&q>50&&nini.visible===true) {
           q = 0;
 ```
 
+Die Schüsse in "Smooosh" sehen so aus: <a href="https://www.youtube.com/watch?v=_kips1sJwew">"Geschosse in 'Smooosh'"<a/>
+
+
 ### Die Powerups<a name="Powerup"></a>
 
 #### Roter BlitzPowerup<a name="RedBolt"></a>
@@ -256,7 +259,8 @@ if (nini.visible===false) {
     }
 ```
 
-Ein Tod in unserem Spiel sieht dann so aus: <a href="https://www.youtube.com/watch?v=zwK5xwTkhxk">"Tode in "Smooosh""<a/>
+Ein Tod in unserem Spiel sieht dann so aus: <a href="https://www.youtube.com/watch?v=zwK5xwTkhxk">"Tode in 'Smooosh'"<a/>
+
 
 ### Das Scoreboard<a name="Scoreboard"></a>
 
