@@ -54,7 +54,7 @@ Mit den beiden Spielermenüs haben wir es sehr ähnlich gehandhabt. Auch diese h
 
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/Spieler%202%20auswahl.jpg" alt="image" width="500">
 
-Die Animationen der Charaktere haben wir schlussendlich vor die Sprites der Spielermenüs gesetzt und als Buttons programmiert um die Charaktere mit einem Mausklick auswählen zu können. Beispielsweise folgt der Code für Spieler 1 ("nini).
+Die Animationen der Charaktere haben wir schlussendlich vor die Sprites der Spielermenüs gesetzt und als Buttons programmiert um die Charaktere mit einem Mausklick auswählen zu können. Beispielsweise folgt der Code für Spieler 1 ("nini").
 
 ```
  if (player1.visible===true) {
@@ -74,6 +74,10 @@ Die Animationen der Charaktere haben wir schlussendlich vor die Sprites der Spie
 ### Die Steuerung<a name="Steuerung"></a>
 
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/TAstatur%20endg%C3%BCltig.jpg" alt="image" width="1500">
+
+
+
+
 
 ```
    elk.bounce(nini);
