@@ -9,15 +9,14 @@ Schuljahr 18/19
 
 [1. Vorwort](#1)                   
 [2. Beschreibung](#2)  
-[3. Erläuterung](#3)   
-[4. Probleme und Lösungen](#4) 
+[3. Erläuterung](#3)    
 
 
 ## Vorwort<a name="1"></a>
 
 "Smooosh" ist ein Spiel, das im Rahmen des Informatikunterrichts in der 12. Klasse von uns in Gamelab auf code.org programmiert wurde. Wir sind ohne jegliche Erfahrungen im Programmieren in dieses Projekt hineingegangen. Gamelab bot uns in dieser Hinsicht eine gute Plattform, da es eine Blockprogrammiersprache ist und wir dort erste Erfahrungen sammeln und die Anfänge des Programmieren lernen konnten.                                                                                                                  
 Das Grundprinzip des Spiels "Smooosh" ist angelehnt an das Spiel "Super Smash Bros.". Es geht darum den Gegenspieler von der Spielfläche herunterzukicken. Unseres unterscheidet sich jedoch in einigen Aspekten erheblich vom Original.                                   
-Auf dieser Seite werden wir das Spiel zunächst [beschreiben](#2), daraufhin die Umsetzung der einzelnen Aspekte [erläutern](#3) und schließlich auf aufgetretene [Probleme](#4) und die jeweiligen [Lösungen](#4) eingehen. 
+Auf dieser Seite werden wir das Spiel zunächst [beschreiben](#2) und daraufhin die Umsetzung der einzelnen Aspekte näher [erläutern](#3).
 
 
 ## Beschreibung<a name="2"></a>
