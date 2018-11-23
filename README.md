@@ -29,7 +29,7 @@ Im Spiel herrscht eine generelle Beschleunigung nach unten, sprich eine ["Gravit
                                                                                                                                     
 Neben den beiden Playern existieren auf dem ["Spielfeld"](#Spielfeld) eine Sonne in der oberen linken Ecke ohne weitere Funktionen und drei Wolken vor einem hellblauen Hintergrund, die in festgelegten Bereichen an zufälligen Orten erscheinen und die Plattformen bilden, auf denen sich die Charaktere bewegen können. Zwei von ihnen bewegen sich ständig hin und her, eine vertikal und eine horizontal. Die Charaktere der Player spawnen jeweils auf einer dieser Plattformen.                                                                 
                                                                                                                                         
-Um sich gegenseitig nun von den Plattformen herunterzubekommen, gibt es mehrere Möglichkeiten: Zum einen können die Player den [Sprung](#Sprung), oder den Doppelsprung nutzen, um an ihren Gegner heranzukommen und diesen mithilfe des Charakters [herunterzuschubsen](#Schubserei). Zum anderen verfügen beide Player über die Möglichkeit den Gegner mit einem [Geschoss](#Geschoss) herunterzuschieben. Für "Player 1" liegt das Geschoss auf den Tasten ["Q"](#Steuerung), um nach links und ["E"](#Steuerung), um nach rechts zu schießen. Bei "Player 2" liegt es auf ["Alt"](#Steuerung) für links und ["Shift"](#Steuerung) für rechts. Neben dieser Eigenschaft, die jeder inne hat, gibt es auch [Powerups](#Powerup). Diese werden von einem in regelmäßigen Abständen quer durch das Spielfeld fliegenden Flugzeug abgeworfen und wenn man diese aufsammelt, beeinflusst man entweder sich selber positiv oder den Gegner negativ. Bei diesen Powerups gibt es drei Kategorien. Die erste beeinflusst den Sprung: Sammelt man das [roter Blitz Powerup](#RedBolt) ein, so kann der Gegner für eine kurze Zeit nicht springen und sammelt man das [grüner Blitz Powerup](#GreenBolt) ein, so kann man selber für einen kurzen Zeitraum unendlich oft hochspringen und ist nicht an den Doppelsprung gebunden. Mit den Powerups der zweiten Kategorie wird das Geschoss beeinflusst. Das [roter Schild Powerup](#RedShield) lässt den Gegner für kurze Zeit nicht schießen und das [grüner Schild Powerup](#GreenShield) lässt einen selber unendlich oft schießen für eine kurze Zeit. Die letzte Kategorie verändert die Größe der Charaktere. Das [grüner Stern Powerup](#GreenStar) lässt einen selber wachsen und das [roter Stern Powerup](#RedStar) lässt den Gegner schrumpfen.                                                                                    
+Um sich gegenseitig nun von den Plattformen herunterzubekommen, gibt es mehrere Möglichkeiten: Zum einen können die Player den [Sprung](#Sprung), oder den Doppelsprung nutzen, um an ihren Gegner heranzukommen und diesen mithilfe des Charakters [herunterzuschubsen](#Schubserei). Zum anderen verfügen beide Player über die Möglichkeit den Gegner mit einem [Geschoss](#Geschoss) herunterzuschieben. Für "Player 1" liegt das Geschoss auf den Tasten ["Q"](#Steuerung), um nach links und ["E"](#Steuerung), um nach rechts zu schießen. Bei "Player 2" liegt es auf ["Alt"](#Steuerung) für links und ["Shift"](#Steuerung) für rechts. Neben dieser Eigenschaft, die jeder inne hat, gibt es auch [Powerups](#Powerup). Diese werden von einem in regelmäßigen Abständen quer durch das Spielfeld fliegenden Flugzeug abgeworfen und wenn man diese aufsammelt, beeinflusst man entweder sich selber positiv oder den Gegner negativ. Bei diesen Powerups gibt es drei Kategorien. Die erste beeinflusst den Sprung: Sammelt man das [roter Blitz Powerup](#RedBolt) ein, so kann der Gegner für eine kurze Zeit nicht springen und sammelt man das [grüner Blitz Powerup](#GreenBolt) ein, so kann man selber für einen kurzen Zeitraum unendlich oft hochspringen und ist nicht an den Doppelsprung gebunden. Mit den Powerups der zweiten Kategorie wird das Geschoss beeinflusst. Das [roter Schild Powerup](#RedShield) lässt den Gegner für kurze Zeit nicht schießen und das [grüner Schild Powerup](#GreenShield) lässt einen selber unendlich oft schießen und die Projektile bewegen sich schneller für eine kurze Zeit. Die letzte Kategorie verändert die Größe der Charaktere. Das [grüner Stern Powerup](#GreenStar) lässt einen selber wachsen und das [roter Stern Powerup](#RedStar) lässt den Gegner schrumpfen.                                                                                    
                                                                                                                                      
 Schafft es nun einer der Player, den anderen von einer Plattform herunterzuschieben, sodass er es nicht schafft sich durch einen Sprung zu retten, verschwindet er sobald er das Spielfeld nach unten verlässt. Dies ist im Spiel der [Tod](#Tod). Zur Seite oder nach oben kann das Spielfeld nicht verlassen werden. Auf dem Bildschirm erscheint die Nachricht "Player [1/2] died" und der andere Spieler bekommt auf dem [Scoreboard](#Scoreboard) in der oberen rechten Ecke einen Punkt. Nach einer kurzen Zeit spawnen beide Charaktere wieder auf ihren [Spawnplätzen](#Respawn) und sie können erneut versuchen sich gegenseitig herunterzuschubsen. Möchte man das Scoreboard zurücksetzen, kann man dies mit der Taste ["0"](#Steuerung) tun. Möchte ein Player einen anderen Charakter spielen, kann man mit ["space"](#Steuerung) wieder in die Charakterauswahl gelangen.
 
@@ -38,55 +38,7 @@ Schafft es nun einer der Player, den anderen von einer Plattform herunterzuschie
 
 ### Die Menüs<a name="Menüs"></a>
 
-
-
 ### Die Steuerung<a name="Steuerung"></a>
-
-```javascript
-function movement() {
-    elk.bounce(nini);
-    if (keyDown("left")) {
-      elk.x = elk.x-5;
-    } else if ((keyDown("right"))) {
-      elk.x = elk.x+5;
-    } else if (keyWentDown("up")&&up<2) {
-      playSound("sound://category_digital/hop.mp3", false);
-      up = up+1;
-      elk.velocityY = -15;
-    } else {
-      elk.velocityX = 0;
-    }
-    if (elk.velocityY===0) {
-      up = 0;
-    }
-    if (keyDown("down")) {
-      elk.velocityY = elk.velocityY+10;
-    } else {
-      elk.velocityY = elk.velocityY + 1;
-    }
-    drawSprites();
-    nini.bounce(elk);
-    if (keyDown("a")) {
-      nini.x = nini.x-5;
-    } else if ((keyDown("d"))) {
-      nini.x = nini.x+5;
-    } else if (keyWentDown("w") && w<2) {
-      w = w+1;
-      nini.velocityY = -15;
-    } else {
-      nini.velocityX = 0;
-    }
-    if (nini.velocityY===0) {
-      w = 0;
-    }
-    if (keyDown("s")) {
-      nini.velocityY = nini.velocityY + 10;
-    } else {
-      nini.velocityY = nini.velocityY + 1;
-    }
-  }
-```
-
 
 ### Die Gravitation<a name="Gravitation"></a>
 
