@@ -40,6 +40,28 @@ Schafft es nun einer der Spieler, den anderen von einer Plattform herunterzuschi
 
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/startmen%C3%BC.jpg" alt="image" width="500">
 
+Im Startmenü haben wir versucht das Spiel so gut es geht generell wiederzuspiegeln. Die ähnliche Hintergrundfarbe und die Unterbringung der drei Charaktere und der Wolke als Plattform soll die direkte Verbindung zum Spiel darstellen. Erstellt haben wir das Startmenü extern auf dem Ipad mit Notability, um es im Programm als Sprite nutzen zu können. 
+
+```
+var start = createSprite(200, 200);
+start.scale = 1.12;
+start.visible = true;
+start.setAnimation("Start");
+```
+Mit den beiden Spielermenüs haben wir es sehr ähnlich gehandhabt. Auch diese haben wir erst am Ipad erstellt und später als Sprite ins Programm hinzugefügt. 
+
+<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/Spieler%201%20auswahl.jpg" alt="image" width="500">
+
+<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/Spieler%202%20auswahl.jpg" alt="image" width="500">
+
+
+
+
+
+
+
+
+
 ### Die Steuerung<a name="Steuerung"></a>
 
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/TAstatur%20endg%C3%BCltig.jpg" alt="image" width="1500">
