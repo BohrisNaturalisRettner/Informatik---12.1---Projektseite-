@@ -42,6 +42,8 @@ Schafft es nun einer der Player, den anderen von einer Plattform herunterzuschie
 
 ### Die Steuerung<a name="Steuerung"></a>
 
+<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/TAstatur%20endg%C3%BCltig.jpg" alt="image" width="1500">
+
 ### Die Gravitation<a name="Gravitation"></a>
 
 ### Das Spielfeld<a name="Spielfeld"></a>
