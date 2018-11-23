@@ -182,14 +182,31 @@ if (keyWentDown("q")&&q>50&&nini.visible===true) {
 
 ### Die Gravitation<a name="Gravitation"></a>
 
+Die Gravitation haben wir im Code für den Schub nach unten als "Gegenstück" genutzt. Solange "S" oder "Down" nicht gedrückt werden, gilt eine ständige Beschleunigung nach unten. 
+
+```
+if (keyDown("down")) {
+      elk.velocityY = elk.velocityY+10;
+    } else {
+      elk.velocityY = elk.velocityY + 1;
+```
+
+Anhand dieses Stück des Codes sieht man, dass wenn die Taste "Down" gedrückt wird eine Beschleunigung von 10 wirkt und sonst immer eine von 1.
 
 ### Das Spielfeld<a name="Spielfeld"></a>
 
+
 ### Der Sprung<a name="Sprung"></a>
+
+
 
 ### Die Schubserei<a name="Schubserei"></a>
 
+
+
 ### Das Geschoss<a name="Geschoss"></a>
+
+
 
 ### Die Powerups<a name="Powerup"></a>
 
@@ -202,7 +219,61 @@ Grüner Stern Powerup<a name="GreenStar"></a>
 
 ### Der Tod<a name="Tod"></a>
 
+Als "tot" sehen wir einen "Charakter" sobald er eine Y-Koordinate von 360 überschreitet. Geschieht dies passieren einige andere Dinge gleichzeitig. Zunächst werden alle wirkenden Powerups auf dem "toten" Charakter ausgeschaltet, der Text "Player 1/2 died" erscheint, er wird unsichtbar und auf dem Scoreboard erscheint ein Punkt für den Gegner. Der folgende Code ist für den Tod von Spieler 1, für Spieler 2 gibt es den gleichen Code noch einmal.
+
+```
+function death() {
+  if (nini.y >= 360) {
+    pup = 0;
+    pup3e = 0;
+    fill(rgb(0, 0, 0));
+    text("Player 1 died", 110, 150);
+    if (nini.visible===true) {
+      nini.visible=false;
+      scoreelk = scoreelk+1;
+    }
+```
+
+Zusätzlich dazu geschehen einige andere Dinge in Abhängigkeit der Unsichtbarkeit des Charakters. Zunächst startet ein Timer, der nach 30 Ticks beide Spawnplattformen erscheinen lässt und auf ihnen beide Charaktere sichtbar macht. Ist dies geschehen wird der Timer wieder zurückgesetzt und ist "bereit" für den nächsten Tod.
+
+```
+if (nini.visible===false) {
+      dnini = dnini+1;
+      if (dnini>30) {
+        elk.visible=true;
+        nini.visible=true;
+        start1.visible = true;
+        start2.visible = true;
+        nini.x=start1.x;
+        nini.y=start1.y-40;
+        elk.x=start2.x;
+        elk.y=start2.y-40;
+        dnini = 0;
+      }
+    }
+```
+
+
 ### Das Scoreboard<a name="Scoreboard"></a>
+
+<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/Screenshot%20(36).png" alt="image" width="500">
+
+
+Das Scoreboard, auf dem die Punkte der Spieler erscheinen, ist ein Rechteck in der rechten oberen Ecke des Spielfelds. In ihm befinden sich zwei Textfelder, zum einen für Spieler 1 und zum anderen für Spieler zwei. Die Punkte der Spieler werden im Rahmen eines Todes, wie oben bereits erläutert, erhöht. Drückt man die Taste "0" werden beide Scores wieder auf 0 gesetzt.
+
+```
+fill(rgb(255, 255, 255));
+  rect(219, 0, 180, 70);
+  fill(rgb(0, 0, 0));
+  text("Spieler 2: "+scoreelk, 240, 60);
+  text("Spieler 1: "+scorenini, 240, 30);
+  drawSprites();
+  if (keyDown("0")) {
+    scorenini = 0;
+    scoreelk = 0;
+  }
+```
+
 
 ### Der Respawn<a name="Respawn"></a>
 
