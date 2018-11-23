@@ -29,9 +29,9 @@ Im Spiel herrscht eine generelle Beschleunigung nach unten, sprich eine ["Gravit
                                                                                                                                     
 Neben den beiden Spielern existieren auf dem ["Spielfeld"](#Spielfeld) eine Sonne in der oberen linken Ecke ohne weitere Funktionen und drei Wolken vor einem hellblauen Hintergrund, die in festgelegten Bereichen an zufälligen Orten erscheinen und die Plattformen bilden, auf denen sich die Charaktere bewegen können. Zwei von ihnen bewegen sich ständig hin und her, eine vertikal und eine horizontal. Die Charaktere der Spieler spawnen jeweils auf einer dieser Plattformen.                                                                 
                                                                                                                                         
-Um sich gegenseitig nun von den Plattformen herunterzubekommen, gibt es mehrere Möglichkeiten: Zum einen können die Spieler den [Sprung](#Sprung), oder den Doppelsprung nutzen, um an ihren Gegner heranzukommen und diesen mithilfe des Charakters [herunterzuschubsen](#Schubserei). Zum anderen verfügen beide Spieler über die Möglichkeit den Gegner mit einem [Geschoss](#Geschoss) herunterzuschieben. Für Spieler 1 liegt das Geschoss auf den Tasten ["Q"](#Steuerung), um nach links und ["E"](#Steuerung), um nach rechts zu schießen. Bei Spieler 2 liegt es auf ["Alt"](#Steuerung) für links und ["Shift"](#Steuerung) für rechts. Neben dieser Eigenschaft, die jeder inne hat, gibt es auch [Powerups](#Powerup). Diese werden von einem in regelmäßigen Abständen quer durch das Spielfeld fliegenden Flugzeug abgeworfen und wenn man diese aufsammelt, beeinflusst man entweder sich selber positiv oder den Gegner negativ. Bei diesen Powerups gibt es drei Kategorien. Die erste beeinflusst den Sprung: Sammelt man das [roter Blitz Powerup](#RedBolt) ein, so kann der Gegner für eine kurze Zeit nicht springen und sammelt man das [grüner Blitz Powerup](#GreenBolt) ein, so kann man selber für einen kurzen Zeitraum unendlich oft hochspringen und ist nicht an den Doppelsprung gebunden. Mit den Powerups der zweiten Kategorie wird das Geschoss beeinflusst. Das [roter Schild Powerup](#RedShield) lässt den Gegner für kurze Zeit nicht schießen und das [grüner Schild Powerup](#GreenShield) lässt einen selber unendlich oft schießen und die Projektile bewegen sich schneller für eine kurze Zeit. Die letzte Kategorie verändert die Größe der Charaktere. Das [grüner Stern Powerup](#GreenStar) lässt einen selber wachsen und das [roter Stern Powerup](#RedStar) lässt den Gegner schrumpfen.                                                                                    
+Um sich gegenseitig nun von den Plattformen herunterzubekommen, gibt es mehrere Möglichkeiten: Zum einen können die Spieler den [Sprung](#Sprung), oder den Doppelsprung nutzen, um an ihren Gegner heranzukommen und diesen mithilfe des Charakters [herunterzuschubsen](#Schubserei). Zum anderen verfügen beide Spieler über die Möglichkeit den Gegner mit einem [Geschoss](#Geschoss) herunterzuschieben. Für Spieler 1 liegt das Geschoss auf den Tasten ["Q"](#Geschoss), um nach links und ["E"](#Geschoss), um nach rechts zu schießen. Bei Spieler 2 liegt es auf ["Alt"](#Geschoss) für links und ["Shift"](#Geschoss) für rechts. Neben dieser Eigenschaft, die jeder inne hat, gibt es auch [Powerups](#Powerup). Diese werden von einem in regelmäßigen Abständen quer durch das Spielfeld fliegenden Flugzeug abgeworfen und wenn man diese aufsammelt, beeinflusst man entweder sich selber positiv oder den Gegner negativ. Bei diesen Powerups gibt es drei Kategorien. Die erste beeinflusst den Sprung: Sammelt man das [roter Blitz Powerup](#RedBolt) ein, so kann der Gegner für eine kurze Zeit nicht springen und sammelt man das [grüner Blitz Powerup](#GreenBolt) ein, so kann man selber für einen kurzen Zeitraum unendlich oft hochspringen und ist nicht an den Doppelsprung gebunden. Mit den Powerups der zweiten Kategorie wird das Geschoss beeinflusst. Das [roter Schild Powerup](#RedShield) lässt den Gegner für kurze Zeit nicht schießen und das [grüner Schild Powerup](#GreenShield) lässt einen selber unendlich oft schießen und die Projektile bewegen sich schneller für eine kurze Zeit. Die letzte Kategorie verändert die Größe der Charaktere. Das [grüner Stern Powerup](#GreenStar) lässt einen selber wachsen und das [roter Stern Powerup](#RedStar) lässt den Gegner schrumpfen.                                                                                    
                                                                                                                                      
-Schafft es nun einer der Spieler, den anderen von einer Plattform herunterzuschieben, sodass er es nicht schafft sich durch einen Sprung zu retten, verschwindet er sobald er das Spielfeld nach unten verlässt. Dies ist im Spiel der [Tod](#Tod). Zur Seite oder nach oben kann das Spielfeld nicht verlassen werden. Auf dem Bildschirm erscheint die Nachricht "Player [1/2] died" und der andere Spieler bekommt auf dem [Scoreboard](#Scoreboard) in der oberen rechten Ecke einen Punkt. Nach einer kurzen Zeit spawnen beide Charaktere wieder auf ihren [Spawnplätzen](#Respawn) und sie können erneut versuchen sich gegenseitig herunterzuschubsen. Möchte man das Scoreboard zurücksetzen, kann man dies mit der Taste ["0"](#Steuerung) tun. Möchte ein Spieler einen anderen Charakter spielen, kann man mit ["space"](#Steuerung) wieder in die Charakterauswahl gelangen.
+Schafft es nun einer der Spieler, den anderen von einer Plattform herunterzuschieben, sodass er es nicht schafft sich durch einen Sprung zu retten, verschwindet er sobald er das Spielfeld nach unten verlässt. Dies ist im Spiel der [Tod](#Tod). Zur Seite oder nach oben kann das Spielfeld nicht verlassen werden. Auf dem Bildschirm erscheint die Nachricht "Player [1/2] died" und der andere Spieler bekommt auf dem [Scoreboard](#Scoreboard) in der oberen rechten Ecke einen Punkt. Nach einer kurzen Zeit spawnen beide Charaktere wieder auf ihren [Spawnplätzen](#Tod) und sie können erneut versuchen sich gegenseitig herunterzuschubsen. Möchte man das Scoreboard zurücksetzen, kann man dies mit der Taste ["0"](#Scoreboard) tun. Möchte ein Spieler einen anderen Charakter spielen, kann man mit ["space"](#Steuerung) wieder in die Charakterauswahl gelangen.
 
 
 ## Erläuterung<a name="3"></a>
@@ -126,38 +126,7 @@ nini.bounce(elk);
   }
 ```
 
-```
-if (keyWentDown("q")&&q>50&&nini.visible===true) {
-          projectile1.x = nini.x;
-          projectile1.y = nini.y;
-          projectile1.visible = true;
-          projectile1.velocityX = -7;
-          q = 0;
-    } else if ((keyWentDown("e")&&e>50&&nini.visible===true)) {
-        projectile2.x = nini.x;
-        projectile2.y = nini.y;
-        projectile2.visible = true;
-        projectile2.velocityX = 7;
-        e = 0;
-    } else if (keyWentDown("alt")&&alt>50&&elk.visible===true) {
-        projectile3.x = elk.x;
-        projectile3.y = elk.y;
-        projectile3.visible = true;
-        projectile3.velocityX = -7;
-        alt = 0;
-    } else if (keyWentDown("shift")&&shift>50&&elk.visible===true) {
-        projectile4.x = elk.x;
-        projectile4.y = elk.y;
-        projectile4.visible = true;
-        projectile4.velocityX = 7;
-        shift = 0;
-```
 
-```
- if (keyDown("0")) {
-    scorenini = 0;
-    scoreelk = 0;
-```
 
 ```
  if (keyDown ("space")) {
@@ -206,7 +175,41 @@ Anhand dieses Stück des Codes sieht man, dass wenn die Taste "Down" gedrückt w
 
 ### Das Geschoss<a name="Geschoss"></a>
 
+Die Geschosse sollen den Spielern des Spiels eine weitere Möglichkeit eröffnen den Gegner herunterzuschubsen und somit einen Punkt zu erlangen. Sie sind normale Sprites, die sich ständig unsichtbar auf der Position des zugehörigen Charakters befinden. Pro Charakter sind es zwei Geschosse: Eines für den Schuss nach links und eines für den Schuss nach rechts. 
 
+```
+//projectile1
+var projectile1 = createSprite(nini.x, nini.y);
+projectile1.setAnimation("Bob-Ross.png_1");
+projectile1.scale = 0.1;
+projectile1.visible=false;
+//projectile2
+var projectile2 = createSprite(nini.x, nini.y);
+projectile2.setAnimation("Bob-Ross.png_1");
+projectile2.scale = 0.1;
+projectile2.visible=false;
+//projectile3
+var projectile3 = createSprite(elk.x, elk.y);
+projectile3.setAnimation("Bob-Ross.png_1");
+projectile3.scale = 0.1;
+projectile3.visible=false;
+//projectile4
+var projectile4 = createSprite(elk.x, elk.y);
+projectile4.setAnimation("Bob-Ross.png_1");
+projectile4.scale = 0.1;
+projectile4.visible=false;
+```
+
+Drückt einer der Spieler im Spiel nun eine der beiden Schusstasten (hier "Q" für Spieler 1), so wird noch einmal sichergestellt, dass sich das Geschoss auf der Position des Charakters befindet. Dies kommt insbesondere zur Geltun, wenn der Spieler gerade geschossen hat und das Geschoss technisch noch unterwegs ist. Daraufhin wird es sichtbar und erlangt eine Beschleunigung. Gleichzeitig wird die Variable q gleich null gesetzt, um einen erneuten Schuss überhaupt zu ermöglichen.
+
+```
+if (keyWentDown("q")&&q>50&&nini.visible===true) {
+          projectile1.x = nini.x;
+          projectile1.y = nini.y;
+          projectile1.visible = true;
+          projectile1.velocityX = -7;
+          q = 0;
+```
 
 ### Die Powerups<a name="Powerup"></a>
 
@@ -234,7 +237,7 @@ function death() {
     }
 ```
 
-Zusätzlich dazu geschehen einige andere Dinge in Abhängigkeit der Unsichtbarkeit des Charakters. Zunächst startet ein Timer, der nach 30 Ticks beide Spawnplattformen erscheinen lässt und auf ihnen beide Charaktere sichtbar macht. Ist dies geschehen wird der Timer wieder zurückgesetzt und ist "bereit" für den nächsten Tod.
+Zusätzlich dazu geschehen einige andere Dinge in Abhängigkeit der Unsichtbarkeit des Charakters. Zunächst startet ein Timer, der nach 30 Ticks beide Spawnplattformen erscheinen lässt und auf ihnen beide Charaktere sichtbar macht. Ist dies geschehen wird der Timer wieder zurückgesetzt und ist "bereit" für den nächsten Tod Der Timer hilft den Spielern, indem beide Spieler Zeit haben sich auf eine neue Runde vorzubereiten und nicht überrascht sind wenn ihr Charakter plötzlich an einer anderen Stelle erscheint. Vorher gab es Komplikationen, da die Charaktere sehr weit am Rand oder sogar neben den an zufälligen Orten erscheinenden Plattformen gespawnt sind. Wir haben uns auch bewusst entschieden, dass beide Charaktere auf ihrer festen Spawnplattform erscheinen, damit sie nicht ineinander erscheinen. 
 
 ```
 if (nini.visible===false) {
@@ -253,6 +256,7 @@ if (nini.visible===false) {
     }
 ```
 
+Ein Tod in unserem Spiel sieht dann so aus: <a href="https://www.youtube.com/watch?v=zwK5xwTkhxk">"Tode in "Smooosh""<a/>
 
 ### Das Scoreboard<a name="Scoreboard"></a>
 
@@ -275,7 +279,7 @@ fill(rgb(255, 255, 255));
 ```
 
 
-### Der Respawn<a name="Respawn"></a>
+
 
 
 
