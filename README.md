@@ -303,7 +303,7 @@ https://youtu.be/fRlSWS0Md9c
 
 Roter Stern Powerup<a name="RedStar"></a>
 
-
+https://youtu.be/XN6scC1JFoU
 
 Grüner Stern Powerup<a name="GreenStar"></a>
 
