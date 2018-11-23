@@ -285,6 +285,22 @@ Fügt man alle diese Commands zusammen, ergibt sich dieses Bild:
 
 ### Die Powerups<a name="Powerup"></a>
 
+Grundsätlich ist es immer sinnvoll powerups einzusammeln. Rote powerups bewirken eine negativen Effekt auf den Gegner, grüne powerups verbessern hingegen den auslösenden Spieler. Aktiviert werden die Powerups, indem ein Spieler den Sprite des powerups berührt. Der powerup wird daraufhin unsichtbar und die pup3(e/n) Variable wird bis 150 erhöht. Solange der Wert kleiner als 150 beträgt, wirkt der gewünschte Effekt. Danach werden die Variabelen pup2 und pup3(e/n) gleich Null gesetzt und der Effekt ist wieder ungültig. So wird dafür gesorgt, dass der jeweilige Effekt nur für eine bestimmte Zeit anhält und die Spieler wieder bereit sind ein neues Powerup aufunehmen. Der Code am Beispiel des Elches als Auslöser:
+
+if ((elk.isTouching(powerup)) && (powerup.visible===true)) {
+      powerup.visible = false;
+      pup3e=1;
+    }
+    if ((0<pup3e) && (pup3e<150) && (powerup.visible===false)) {
+      nini.velocityY = nini.velocityY+10;
+      pup3e = pup3e+1;
+    }
+    if (pup3e===150) {
+      pup3e = 0;
+      pup2 = 0;
+    }
+    
+
 Roter BlitzPowerup<a name="RedBolt"></a>
 
 https://youtu.be/-xrsTx3qcIk
