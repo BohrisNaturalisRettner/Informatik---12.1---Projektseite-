@@ -301,7 +301,8 @@ if ((elk.isTouching(powerup)) && (powerup.visible===true)) {
     }
 ```    
 
-Roter BlitzPowerup<a name="RedBolt"></a>
+
+Roter BlitzPowerup<a name="RedBolt"></a
 
 Wenn der Rote Blitz Powerup aktiviert wird, wird der Gegenspieler stark nach unten beschleunigt, was das Springen verhindert:
 ```
@@ -309,6 +310,7 @@ nini.velocityY = nini.velocityY+10;
 elk.velocityY = elk.velocityY+10;
 ```
 https://youtu.be/-xrsTx3qcIk
+
 
 Grüner Blitz Powerup<a name="GreenBolt"></a>
 
@@ -318,6 +320,7 @@ up = 0;
 w = 0;
 ```
 https://youtu.be/-4X9b7YCLho
+
 
 Roter Schild Powerup<a name="RedShield"></a>
 
@@ -329,8 +332,8 @@ e = 0;
 alt = 0;
 shift = 0;
 ```
-
 https://youtu.be/OFgQbxa9s6o
+
 
 Grüner Schild Powerup<a name="GreenShield"></a>
 
@@ -356,6 +359,7 @@ projectile1.velocityX = -30;
 ```
 https://youtu.be/fRlSWS0Md9c
 
+
 Roter Stern Powerup<a name="RedStar"></a>
 
 Der Rote Stern Powerup verkleinert den Gegenspieler:
@@ -367,8 +371,8 @@ elk.scale = 0.05;
       } else {
       elk.scale = 0.15;
 ```
-
 https://youtu.be/XN6scC1JFoU
+
 
 Grüner Stern Powerup<a name="GreenStar"></a>
 
@@ -382,7 +386,6 @@ nini.scale = 0.3;
       } else {
       nini.scale = 0.15;
 ```
-
 https://youtu.be/v8O6ZMtVA8o
 
 
