@@ -36,7 +36,55 @@ Schafft es nun einer der Player, den anderen von einer Plattform herunterzuschie
 
 ### Die Menüs<a name="Menüs"></a>
 
+
+
 ### Die Steuerung<a name="Steuerung"></a>
+
+```javascript
+function movement() {
+    elk.bounce(nini);
+    if (keyDown("left")) {
+      elk.x = elk.x-5;
+    } else if ((keyDown("right"))) {
+      elk.x = elk.x+5;
+    } else if (keyWentDown("up")&&up<2) {
+      playSound("sound://category_digital/hop.mp3", false);
+      up = up+1;
+      elk.velocityY = -15;
+    } else {
+      elk.velocityX = 0;
+    }
+    if (elk.velocityY===0) {
+      up = 0;
+    }
+    if (keyDown("down")) {
+      elk.velocityY = elk.velocityY+10;
+    } else {
+      elk.velocityY = elk.velocityY + 1;
+    }
+    drawSprites();
+    nini.bounce(elk);
+    if (keyDown("a")) {
+      nini.x = nini.x-5;
+    } else if ((keyDown("d"))) {
+      nini.x = nini.x+5;
+    } else if (keyWentDown("w") && w<2) {
+      w = w+1;
+      nini.velocityY = -15;
+    } else {
+      nini.velocityX = 0;
+    }
+    if (nini.velocityY===0) {
+      w = 0;
+    }
+    if (keyDown("s")) {
+      nini.velocityY = nini.velocityY + 10;
+    } else {
+      nini.velocityY = nini.velocityY + 1;
+    }
+  }
+```
+
 
 ### Die Gravitation<a name="Gravitation"></a>
 
