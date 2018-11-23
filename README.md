@@ -100,7 +100,7 @@ function movement() {
 
 ### Die Powerups<a name="Powerup"></a>
 
-Roter BlitzPowerup<a name="RedBolt"></a>
+#### Roter BlitzPowerup<a name="RedBolt"></a>
 Grüner Blitz Powerup<a name="GreenBolt"></a>
 Roter Schild Powerup<a name="RedShield"></a>
 Grüner Schild Powerup<a name="GreenShield"></a>
