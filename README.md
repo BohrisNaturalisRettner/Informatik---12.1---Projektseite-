@@ -164,6 +164,82 @@ Anhand dieses Stück des Codes sieht man, dass wenn die Taste "Down" gedrückt w
 
 ### Das Spielfeld<a name="Spielfeld"></a>
 
+Das Spielfeld ist an allen vier Seiten durch Edges begrenzt. Dies geht mit dem knappen, aber effektivem Command "createEdgeSprites();". Später muss noch für jeden Sprite ergänzt werden, dass er mit den Edges auch kollidiert.
+
+```
+elk.collide(edges);
+nini.collide(edges);
+```
+
+Nun, da die Grenzen des Spielfelds klar sind, geht es als nächstes um die Optik des Spielfelds. Der Hintergrund ist einfach als hellblau durch den RGB (0, 192, 255) festgelegt.
+
+```
+function draw() {
+  background(rgb(0, 192, 255));
+```
+
+Zuerst hatten wir den Hintergrund einfach als blaue Sprite, jedoch hat uns das vor weitgehende Probleme mit den Texten gestellt, deswegen haben wir uns umentschieden und den Hintergrund selber als hellblau festgelegt. 
+In unserem stellt das hellblau den Himmel dar, deswegen ist es auch logisch, das es eine Sonne gibt. Diese befindet sich als Sprite in der oberen linken Ecke.
+
+```
+//sun
+var sun = createSprite(69, 69);
+sun.setAnimation("Sun_1");
+sun.scale = 0.4;
+```
+
+Um das Himmelsthema weiter fortzuführen, sind die Sprites, die die Plattformen darstellen, Animationen von Wolken.
+
+```
+//ground1
+var ground = createSprite(randomNumber(120, 130), 350);
+ground.setAnimation("Wolke");
+ground.height = 50;
+ground.width = 120;
+//ground2
+var ground2 = (createSprite(randomNumber(100, 200), 200));
+ground2.setAnimation("Wolke");
+ground2.scale = 0.3;
+//ground3
+var ground3 = createSprite(ground.x+170, ground.y-randomNumber(30,70));
+ground3.setAnimation("Wolke");
+ground3.height = 30;
+ground3.width = 100;
+```
+
+Wie im Code auch unschwer zu erkennen ist, erscheinen die Plattformen jedes Mal ein wenig unterschiedlich, durch die randomNumber in den Koordinaten. Neben dem zufälligen Erscheinungsort bewegen sich auch zwei der drei Plattformen. 
+
+```
+   ground2.velocityX = -0.5;
+    ground3.velocityY = -0.5;
+  }
+  if ((ground2.x==50 && ground2.velocityX < 0)) {
+    ground2.velocityX = 0.5;
+  }
+  if ((ground3.y)<=200 && ground3.velocityY < 0) {
+    ground3.velocityY = 0.5;
+  }
+  if ((ground2.x==200 && ground2.velocityX > 0)) {
+     ground2.velocityX = -0.5;
+  }
+  if (ground3.y>=350 && ground3.velocityY > 0) {
+    ground3.velocityY = -0.5;
+  }
+```
+
+Selbstverständlich colliden auch die Charaktere mit den Grounds.
+
+```
+nini.collide(ground);
+nini.collide(ground2);
+nini.collide(ground3);
+elk.collide(ground);
+elk.collide(ground2);
+elk.collide(ground3);
+```
+
+Fügt man alle diese Commands zusammen, ergibt sich dieses Bild: 
+<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/Screenshot%20(36).png" alt="image" width="500">
 
 ### Der Sprung<a name="Sprung"></a>
 
@@ -211,7 +287,7 @@ if (keyWentDown("q")&&q>50&&nini.visible===true) {
           q = 0;
 ```
 
-Die Schüsse in "Smooosh" sehen so aus: <a href="https://www.youtube.com/watch?v=_kips1sJwew">"Geschosse in 'Smooosh'"<a/>
+Die Schüsse in "Smooosh" sehen so aus: <a href="https://www.youtube.com/watch?v=_kips1sJwew">"Geschosse in 'Smooosh'"<a/>.
 
 
 ### Die Powerups<a name="Powerup"></a>
@@ -259,7 +335,7 @@ if (nini.visible===false) {
     }
 ```
 
-Ein Tod in unserem Spiel sieht dann so aus: <a href="https://www.youtube.com/watch?v=zwK5xwTkhxk">"Tode in 'Smooosh'"<a/>
+Ein Tod in unserem Spiel sieht dann so aus: <a href="https://www.youtube.com/watch?v=zwK5xwTkhxk">"Tode in 'Smooosh'"<a/>.
 
 
 ### Das Scoreboard<a name="Scoreboard"></a>
