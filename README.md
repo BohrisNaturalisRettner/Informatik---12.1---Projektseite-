@@ -279,7 +279,8 @@ function jet() {
 ```
 
 Fügt man alle diese Commands zusammen, ergibt sich dieses Bild: 
-<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/Screenshot%20(36).png" alt="image" width="500">
+
+<img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/Spielfeld.png" alt="image" width="500">
 
 
 ### Die Powerups<a name="Powerup"></a>
