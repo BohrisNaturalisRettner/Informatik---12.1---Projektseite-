@@ -9,8 +9,9 @@ Schuljahr 18/19
 
 [1. Vorwort](#1)                   
 [2. Beschreibung](#2)  
-[3. Erläuterung](#3)    
-[4. Schlusswort](#4)
+[3. Erläuterung](#3)  
+[4. Herausforderungen](#4)
+[5. Schlusswort](#5)
 
 ## Vorwort<a name="1"></a>
 
@@ -75,58 +76,52 @@ Die Animationen der Charaktere haben wir schlussendlich vor die Sprites der Spie
 
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/TAstatur%20endg%C3%BCltig.jpg" alt="image" width="1500">
 
-
-
-
-
+Die Hauptsteuerungselemente auf die ich in diesem Teil eingehe sind die Steuerung der Charaktere und die Rückkehr in das Spielermenü. 
+Die Steuerung der Charaktere basiert auf den Pfeiltasten und "wasd". Alle anderen Steuerungselemente werden im weiteren Verlauf der Erläuterung eingehend behandelt. 
+                                                                                                     
+Für den Spieler 2 liegt der Sprung auf "up":
 ```
-   elk.bounce(nini);
-    if ((elk.isTouching(ground)) || (elk.isTouching (ground2)) || (elk.isTouching (ground3))) {
-      up = 0;
-    }
-    if (keyDown("left")) {
-      elk.x = elk.x-5;
-    } else if ((keyDown("right"))) {
-      elk.x = elk.x+5;
-    } else if (keyWentDown("up")&&up<2) {
-      up = up+1;
-      elk.velocityY = -15;
-    } else {
-      elk.velocityX = 0;
-    }
-    if (keyDown("down")) {
-      elk.velocityY = elk.velocityY+10;
-    } else {
-      elk.velocityY = elk.velocityY + 1;
-    }
-    drawSprites();
+if (keyWentDown("up")) {
+    elk.velocityY = -15;
+```
+Die Bewegung nach links liegt auf "left":
+```
+if (keyDown("left")) {
+   elk.x = elk.x-5;
+```
+Die Bewegung nach rechts liegt auf "right":
+```
+if ((keyDown("right"))) {
+   elk.x = elk.x+5;
+```
+Der Schub nach unten liegt auf "down":
+```
+if (keyDown("down")) {
+   elk.velocityY = elk.velocityY+10;
 ```
 
+Für den Spieler 1 liegt der Sprung auf "w":
 ``` 
-nini.bounce(elk);
-    if (keyDown("a")) {
-      nini.x = nini.x-5;
-    } else if ((keyDown("d"))) {
-      nini.x = nini.x+5;
-    } else if (keyWentDown("w") && w<2) {
-      w = w+1;
-      nini.velocityY = -15;
-    } else {
-      nini.velocityX = 0;
-    }
-    if (nini.velocityY===0) {
-      w = 0;
-    }
-    if (keyDown("s")) {
-      nini.velocityY = nini.velocityY + 10;
-    } else {
-      nini.velocityY = nini.velocityY + 1;
-    }
-  }
+if (keyWentDown("w")) {
+   nini.velocityY = -15;
+```
+Die Bewegung nach links liegt auf "A":                                                                            
+```
+if (keyDown("a")) {
+    nini.x = nini.x-5;   
+```
+Die Bewegung nach rechts liegt auf "D":                                                                                      
+```
+if ((keyDown("d"))) {
+    nini.x = nini.x+5;   
+```
+Der Schub nach unten liegt auf "S":                                                                                                
+```
+if (keyDown("s")) {
+    nini.velocityY = nini.velocityY + 10;    
 ```
 
-
-
+Wenn ein Spieler sich wünscht einen anderen Charakter zu spielen, so kann er dies mit "space" tun. Der Code dafür sieht wie folgt aus:
 ```
  if (keyDown ("space")) {
     start.visible = false;
@@ -148,6 +143,9 @@ nini.bounce(elk);
   drawSprites();
 ```
 
+Zunächst wird die Startseite auf unsichtbar gestellt, weil das Programm nicht weiß ob du zum ersten Mal ins Spielermenü kommst oder nur wieder zurückkehrst. Daraufhin wird das Spielermenü 1 sichtbar gemacht und alle anderen Sprites unsichtbar. Die beiden Charaktere werden vorsorglich im Hintergrund bereits auf ihre Startspawnplattformen gestellt, sodass sie nach Verlassen des zweiten Spielermenüs nur sichtbar gemacht werden müssen. 
+
+
 ### Die Gravitation<a name="Gravitation"></a>
 
 Die Gravitation haben wir im Code für den Schub nach unten als "Gegenstück" genutzt. Solange "S" oder "Down" nicht gedrückt werden, gilt eine ständige Beschleunigung nach unten. 
@@ -160,6 +158,7 @@ if (keyDown("down")) {
 ```
 
 Anhand dieses Stück des Codes sieht man, dass wenn die Taste "Down" gedrückt wird eine Beschleunigung von 10 wirkt und sonst immer eine von 1.
+
 
 ### Das Spielfeld<a name="Spielfeld"></a>
 
@@ -558,5 +557,8 @@ fill(rgb(255, 255, 255));
 ```
 
 
-## Schlusswort<a name="4"></a>
-jhg
+## Herausforderungen<a name="4"></a>
+
+
+## Schlusswort<a name="5"></a>
+
