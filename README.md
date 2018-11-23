@@ -258,7 +258,7 @@ function powerups() {
     powerup.velocityY = 1.5;
 ```
 
-In dem Code oben, wird der Abwurf des Powerups beschrieben. Zunächst wird beschrieben wie zufällig ein Powerup von eins bis sechs ausgewählt wird. Dieses wird sichtbar bei der Position des Flugzeugs und erhählt eine Beschleunigung nach unten. 
+In dem Code oben, wird der Abwurf des Powerups beschrieben. Zunächst wird beschrieben wie zufällig ein Powerup von eins bis sechs ausgewählt wird. Dieses wird sichtbar bei der Position des Flugzeugs und erhält eine Geschwindigkeit nach unten. 
 
 In dem unteren Code wird die Auswahl der Abwurfstelle für das Powerup beschrieben. Das Flugzeug erscheint nach 500 Ticks und es wird für den Abwurf eine zufällige X-Koordinate zwischen 100 und 300 gewählt. Das Flugzeug wird sichtbar und erhält eine Geschwindigkeit nach rechts. Wenn das Flugzeug über den rechten Spielfeldrand hinaus geflogen ist, wird es unsichtbar, auf seine Ursprungssituation gesetzt und der Tick-counter auf 0 gesetzt. Eben dieser beginnt von neuen und bei 500 fliegt das Flugzeug erneut.
 
@@ -281,6 +281,34 @@ function jet() {
 
 Fügt man alle diese Commands zusammen, ergibt sich dieses Bild: 
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/Screenshot%20(36).png" alt="image" width="500">
+
+
+### Die Powerups<a name="Powerup"></a>
+
+Roter BlitzPowerup<a name="RedBolt"></a>
+
+https://youtu.be/-xrsTx3qcIk
+
+Grüner Blitz Powerup<a name="GreenBolt"></a>
+
+https://youtu.be/-4X9b7YCLho
+
+Roter Schild Powerup<a name="RedShield"></a>
+
+https://youtu.be/OFgQbxa9s6o
+
+Grüner Schild Powerup<a name="GreenShield"></a>
+
+https://youtu.be/fRlSWS0Md9c
+
+Roter Stern Powerup<a name="RedStar"></a>
+
+
+
+Grüner Stern Powerup<a name="GreenStar"></a>
+
+https://youtu.be/v8O6ZMtVA8o
+
 
 ### Der Sprung<a name="Sprung"></a>
 
@@ -330,15 +358,6 @@ if (keyWentDown("q")&&q>50&&nini.visible===true) {
 
 Die Schüsse in "Smooosh" sehen so aus: <a href="https://www.youtube.com/watch?v=_kips1sJwew">"Geschosse in 'Smooosh'"<a/>.
 
-
-### Die Powerups<a name="Powerup"></a>
-
-#### Roter BlitzPowerup<a name="RedBolt"></a>
-Grüner Blitz Powerup<a name="GreenBolt"></a>
-Roter Schild Powerup<a name="RedShield"></a>
-Grüner Schild Powerup<a name="GreenShield"></a>
-Roter Stern Powerup<a name="RedStar"></a>
-Grüner Stern Powerup<a name="GreenStar"></a>
 
 ### Der Tod<a name="Tod"></a>
 
