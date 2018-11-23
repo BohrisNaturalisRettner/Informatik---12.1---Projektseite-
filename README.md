@@ -16,23 +16,24 @@ Schuljahr 18/19
 ## Vorwort<a name="1"></a>
 
 "Smooosh" ist ein Spiel, das im Rahmen des Informatikunterrichts in der 12. Klasse von uns in Gamelab auf code.org programmiert wurde. Wir sind ohne jegliche Erfahrungen im Programmieren in dieses Projekt hineingegangen. Gamelab bot uns in dieser Hinsicht eine gute Plattform, da es eine Blockprogrammiersprache ist und wir dort erste Erfahrungen sammeln und die Anfänge des Programmieren lernen konnten.                                                                                                                  
-Das Grundprinzip des Spiels "Smooosh" ist angelehnt an das Spiel "Super Smash Bros.". Es geht darum den Gegenspieler von der Spielfläche herunterzukicken. Unseres unterscheidet sich jedoch in einigen Aspekten erheblich vom Original.                                   
+Das Grundprinzip des Spiels "Smooosh" ist angelehnt an das Spiel "Super Smash Bros.". Es geht darum, den Gegenspieler von der Spielfläche herunterzukicken. Unseres unterscheidet sich jedoch in einigen Aspekten erheblich vom Original.                                   
 Auf dieser Seite werden wir das Spiel zunächst [beschreiben](#2) und daraufhin die Umsetzung der einzelnen Aspekte näher [erläutern](#3).
 
 
 ## Beschreibung<a name="2"></a>
 
-Startet man unser Spiel, gelangt man zunächst in ein [Startmenü](#Menüs). Um Fortzufahren muss man nun "space" drücken. Damit gelangt man in das [Spielermenü](#Menüs) 1, in dem sich Spieler 1 einen Charakter aussuchen kann, den er spielen möchte. Die Charaktere unterscheiden sich lediglich im Aussehen, aber nicht in den Fähigkeiten. Nachdem er Einen per Mausklick ausgewählt hat, steht Spieler 2 im [Spielermenü](#Menüs) 2 vor der gleichen Entscheidung. Neben den Charakteren wird der Spieler auch mit der Steuerung vertraut gemacht. Haben beide einen Charakter ausgewählt, startet das Spiel.                     
+Startet man unser Spiel, gelangt man zunächst in ein [Startmenü](#Menüs). Um fortzufahren, muss man nun "space" drücken. Damit gelangt man in das [Spielermenü](#Menüs) 1, in dem sich Spieler 1 einen Charakter aussuchen kann, den er spielen möchte. Die Charaktere unterscheiden sich lediglich im Aussehen, aber nicht in den Fähigkeiten. Nachdem er einen Charakter per Mausklick ausgewählt hat, steht Spieler 2 im [Spielermenü](#Menüs) 2 vor der gleichen Entscheidung. Neben den Charakteren wird der Spieler auch mit der Steuerung des Spiels vertraut gemacht, indem die jeweiligen Tasten angezeigt werden, mit denen der Spieler die Figuren steuern kann. Wenn beide Spieler einen Charakter ausgewählt haben, startet das Spiel.                     
                                                                                                                                        
 Die [Steuerung](#Steuerung) für Spieler 1 liegt auf den Tasten "W" für den Sprung, "A" für eine Bewegung nach links, "D" für eine Bewegung nach rechts und "S" für einen noch schnelleren Fall. Für Spieler 2 liegt die Steuerung in der gleichen Formation auf den Pfeiltasten "up", "left", "right" und "down".          
                                                                                                                                       
 Im Spiel herrscht eine generelle Beschleunigung nach unten, sprich eine ["Gravitation"](#Gravitation). Die Tasten "S" für Spieler 1 und "down" für Spieler 2 geben dem Charakter einen extra Schub, sodass sie noch schneller fallen.                                          
                                                                                                                                     
-Neben den beiden Spielern existieren auf dem ["Spielfeld"](#Spielfeld) eine Sonne in der oberen linken Ecke ohne weitere Funktionen und drei Wolken vor einem hellblauen Hintergrund, die in festgelegten Bereichen an zufälligen Orten erscheinen und die Plattformen bilden, auf denen sich die Charaktere bewegen können. Zwei von ihnen bewegen sich ständig hin und her, eine vertikal und eine horizontal. Die Charaktere der Spieler spawnen jeweils auf einer dieser Plattformen.                                                                 
+Neben den beiden Spielern existieren auf dem ["Spielfeld"](#Spielfeld) eine Sonne in der oberen linken Ecke, die keine weitere Funktion hat und drei Wolken vor einem hellblauen Hintergrund, die in festgelegten Bereichen an zufälligen Orten erscheinen. Die Wolken bilden die Plattformen, auf denen sich die Charaktere bewegen können. Zwei von ihnen bewegen sich ständig hin und her, eine vertikal und eine horizontal. Die Charaktere der Spieler spawnen jeweils auf einer dieser Plattformen.                                                                 
                                                                                                                                         
-Um sich gegenseitig nun von den Plattformen herunterzubekommen, gibt es mehrere Möglichkeiten: Zum einen können die Spieler den [Sprung](#Sprung), oder den Doppelsprung nutzen, um an ihren Gegner heranzukommen und diesen mithilfe des Charakters [herunterzuschubsen](#Schubserei). Zum anderen verfügen beide Spieler über die Möglichkeit den Gegner mit einem [Geschoss](#Geschoss) herunterzuschieben. Für Spieler 1 liegt das Geschoss auf den Tasten ["Q"](#Geschoss), um nach links und ["E"](#Geschoss), um nach rechts zu schießen. Bei Spieler 2 liegt es auf ["Alt"](#Geschoss) für links und ["Shift"](#Geschoss) für rechts. Neben dieser Eigenschaft, die jeder inne hat, gibt es auch [Powerups](#Powerup). Diese werden von einem in regelmäßigen Abständen quer durch das Spielfeld fliegenden Flugzeug abgeworfen und wenn man diese aufsammelt, beeinflusst man entweder sich selber positiv oder den Gegner negativ. Bei diesen Powerups gibt es drei Kategorien. Die erste beeinflusst den Sprung: Sammelt man das [roter Blitz Powerup](#RedBolt) ein, so kann der Gegner für eine kurze Zeit nicht springen und sammelt man das [grüner Blitz Powerup](#GreenBolt) ein, so kann man selber für einen kurzen Zeitraum unendlich oft hochspringen und ist nicht an den Doppelsprung gebunden. Mit den Powerups der zweiten Kategorie wird das Geschoss beeinflusst. Das [roter Schild Powerup](#RedShield) lässt den Gegner für kurze Zeit nicht schießen und das [grüner Schild Powerup](#GreenShield) lässt einen selber unendlich oft schießen und die Projektile bewegen sich schneller für eine kurze Zeit. Die letzte Kategorie verändert die Größe der Charaktere. Das [grüner Stern Powerup](#GreenStar) lässt einen selber wachsen und das [roter Stern Powerup](#RedStar) lässt den Gegner schrumpfen.                                                                                    
+Um das Ziel zu erreichen, den Gegenspieler von der Wolke zu befördern, auf der sich dieser befindet, gibt es mehrere Möglichkeiten: Zum einen können die Spieler den [Sprung](#Sprung), oder den Doppelsprung nutzen, um an ihren Gegner heranzukommen und diesen mithilfe des Charakters [herunterzuschubsen](#Schubserei). Zum anderen verfügen beide Spieler über die Möglichkeit, den Gegner mit einem [Geschoss](#Geschoss) von der Wolke herunterzuschießen. Für Spieler 1 liegt das Geschoss auf den Tasten ["Q"](#Geschoss), um nach links und ["E"](#Geschoss), um nach rechts zu schießen. Bei Spieler 2 liegt es auf ["Alt"](#Geschoss) für links und ["Shift"](#Geschoss) für rechts. Neben dieser Fähigkeit zu schießen, die beide Spieler gleichermaßen inne haben, gibt es auch [Powerups](#Powerup). Diese werden von einem in regelmäßigen Abständen quer durch das Spielfeld fliegenden Flugzeug abgeworfen. Wenn man diese aufsammelt, beeinflusst man entweder sich selber positiv oder den Gegner negativ. Es gibt drei Kategorien von Powerups, wobei jede Kategorie aus zwei gegensätzlich wirkenden
+Powerups besteht. Insgesamt gibt es also sechs verschiedene Powerups. Die erste Kategorie von Powerups beeinflusst das Sprungverhalten der Charaktere: Sammelt man das [roter Blitz Powerup](#RedBolt) ein, so kann der Gegner für eine kurze Zeit nicht springen. Fängt man hingegen das [grüner Blitz Powerup](#GreenBolt) ein, so kann der eigene Charakter für einen kurzen Zeitraum unendlich oft hochspringen und ist nicht an den Doppelsprung gebunden. Die Powerups der zweiten Kategorie wirken sich auf die Möglichkeit der Charaktere aus, Geschosse abzufeuern. Das [roter Schild Powerup](#RedShield) verhindert für kurze Zeit, dass der Gegner schießen kann, während das [grüner Schild Powerup](#GreenShield) dem eigenen Charakter für kurze Zeit die Fähigkeit gibt, unendlich oft zu schießen, wobei sich zudem die Projektile deutlich schneller bewegen. Die letzte Kategorie der Powerups verändert die Größe der Charaktere. Das [grüner Stern Powerup](#GreenStar) lässt den eigenen Charakter wachsen, das [roter Stern Powerup](#RedStar) lässt den Gegner schrumpfen.                                                                                    
                                                                                                                                      
-Schafft es nun einer der Spieler, den anderen von einer Plattform herunterzuschieben, sodass er es nicht schafft sich durch einen Sprung zu retten, verschwindet er sobald er das Spielfeld nach unten verlässt. Dies ist im Spiel der [Tod](#Tod). Zur Seite oder nach oben kann das Spielfeld nicht verlassen werden. Auf dem Bildschirm erscheint die Nachricht "Player [1/2] died" und der andere Spieler bekommt auf dem [Scoreboard](#Scoreboard) in der oberen rechten Ecke einen Punkt. Nach einer kurzen Zeit spawnen beide Charaktere wieder auf ihren [Spawnplätzen](#Tod) und sie können erneut versuchen sich gegenseitig herunterzuschubsen. Möchte man das Scoreboard zurücksetzen, kann man dies mit der Taste ["0"](#Scoreboard) tun. Möchte ein Spieler einen anderen Charakter spielen, kann man mit ["space"](#Steuerung) wieder in die Charakterauswahl gelangen.
+Schafft es nun einer der Spieler, den anderen von einer Plattform herunterzuschieben, und schafft dieser es nicht, sich durch einen Sprung wieder auf eine Plattform zu retten, verschwindet der Charakter, sobald er das Spielfeld nach unten verlässt. Dies ist im Spiel der [Tod](#Tod). Zur Seite oder nach oben kann das Spielfeld nicht verlassen werden. Auf dem Bildschirm erscheint die Nachricht "Player [1/2] died" und der andere Spieler bekommt auf dem [Scoreboard](#Scoreboard) in der oberen rechten Ecke einen Punkt. Nach einer kurzen Zeit spawnen beide Charaktere wieder auf ihren [Spawnplätzen](#Tod) und sie können erneut versuchen, sich gegenseitig herunterzuschubsen. Möchte man das Scoreboard zurücksetzen, kann man dies mit der Taste ["0"](#Scoreboard) tun. Möchte ein Spieler einen anderen Charakter spielen, kann man mit ["space"](#Steuerung) wieder in die Charakterauswahl gelangen.
 
 
 ## Erläuterung<a name="3"></a>
@@ -41,7 +42,7 @@ Schafft es nun einer der Spieler, den anderen von einer Plattform herunterzuschi
 
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/startmen%C3%BC.jpg" alt="image" width="500">
 
-Im Startmenü haben wir versucht das Spiel so gut es geht generell wiederzuspiegeln. Die ähnliche Hintergrundfarbe und die Unterbringung der drei Charaktere und der Wolke als Plattform soll die direkte Verbindung zum Spiel darstellen. Erstellt haben wir das Startmenü extern auf dem Ipad mit Notability, um es im Programm als Sprite nutzen zu können. 
+Im Startmenü haben wir versucht, das Spiel so gut es geht, generell wiederzuspiegeln. Die ähnliche Hintergrundfarbe und die Unterbringung der drei Charaktere und der Wolke als Plattform soll die direkte Verbindung zum Spiel darstellen. Erstellt haben wir das Startmenü extern auf dem Ipad mit Notability, um es im Programm als Sprite nutzen zu können. 
 
 ```
 var start = createSprite(200, 200);
@@ -55,7 +56,7 @@ Mit den beiden Spielermenüs haben wir es sehr ähnlich gehandhabt. Auch diese h
 
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/Spieler%202%20auswahl.jpg" alt="image" width="500">
 
-Die Animationen der Charaktere haben wir schlussendlich vor die Sprites der Spielermenüs gesetzt und als Buttons programmiert um die Charaktere mit einem Mausklick auswählen zu können. Beispielsweise folgt der Code für Spieler 1 ("nini").
+Die Animationen der Charaktere haben wir schlussendlich vor die Sprites der Spielermenüs gesetzt und als Buttons programmiert, um die Charaktere mit einem Mausklick auswählen zu können. Beispielsweise folgt der Code für Spieler 1 ("nini").
 
 ```
  if (player1.visible===true) {
@@ -76,7 +77,7 @@ Die Animationen der Charaktere haben wir schlussendlich vor die Sprites der Spie
 
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/TAstatur%20endg%C3%BCltig.jpg" alt="image" width="1500">
 
-Die Hauptsteuerungselemente auf die ich in diesem Teil eingehe sind die Steuerung der Charaktere und die Rückkehr in das Spielermenü. 
+Die Hauptsteuerungselemente, auf die wir in diesem Teil eingehen, sind die Steuerung der Charaktere und die Rückkehr in das Spielermenü. 
 Die Steuerung der Charaktere basiert auf den Pfeiltasten und "wasd". Alle anderen Steuerungselemente werden im weiteren Verlauf der Erläuterung eingehend behandelt. 
                                                                                                      
 Für den Spieler 2 liegt der Sprung auf "up":
@@ -121,7 +122,7 @@ if (keyDown("s")) {
     nini.velocityY = nini.velocityY + 10;    
 ```
 
-Wenn ein Spieler sich wünscht einen anderen Charakter zu spielen, so kann er dies mit "space" tun. Der Code dafür sieht wie folgt aus:
+Wenn ein Spieler sich wünscht, einen anderen Charakter zu spielen, so kann er dies mit "space" tun. Der Code dafür sieht wie folgt aus:
 ```
  if (keyDown ("space")) {
     start.visible = false;
@@ -143,7 +144,7 @@ Wenn ein Spieler sich wünscht einen anderen Charakter zu spielen, so kann er di
   drawSprites();
 ```
 
-Zunächst wird die Startseite auf unsichtbar gestellt, weil das Programm nicht weiß ob du zum ersten Mal ins Spielermenü kommst oder nur wieder zurückkehrst. Daraufhin wird das Spielermenü 1 sichtbar gemacht und alle anderen Sprites unsichtbar. Die beiden Charaktere werden vorsorglich im Hintergrund bereits auf ihre Startspawnplattformen gestellt, sodass sie nach Verlassen des zweiten Spielermenüs nur sichtbar gemacht werden müssen. 
+Zunächst wird die Startseite auf unsichtbar gestellt, weil das Programm nicht weiß, ob der Spieler zum ersten Mal ins Spielermenü kommst oder nur wieder zurückkehrst. Daraufhin wird das Spielermenü 1 sichtbar gemacht und alle anderen Sprites unsichtbar. Die beiden Charaktere werden vorsorglich im Hintergrund bereits auf ihre Startspawnplattformen gestellt, sodass sie nach Verlassen des zweiten Spielermenüs nur sichtbar gemacht werden müssen. 
 
 
 ### Die Gravitation<a name="Gravitation"></a>
@@ -157,7 +158,7 @@ if (keyDown("down")) {
       elk.velocityY = elk.velocityY + 1;
 ```
 
-Anhand dieses Stück des Codes sieht man, dass wenn die Taste "Down" gedrückt wird eine Beschleunigung von 10 wirkt und sonst immer eine von 1.
+Anhand dieses Stück des Codes sieht man, dass, wenn die Taste "Down" gedrückt wird, eine Beschleunigung von 10 wirkt und sonst immer eine von 1.
 
 
 ### Das Spielfeld<a name="Spielfeld"></a>
@@ -236,7 +237,7 @@ elk.collide(ground2);
 elk.collide(ground3);
 ```
 
-Das letzte Feature ist das Flugzeug, das vorbei fliegt und die Powerups droppt. 
+Das letzte Feature ist das Flugzeug, das vorbei fliegt und die Powerups fallen lässt. 
 
 ```
 //flugzeug
@@ -244,7 +245,7 @@ var flugzeug = createSprite(-100, 100);
 flugzeug.setAnimation("planeRed1_1");
 ```
 
-Das Flugzeug erscheint in regelmäßigen Abständen und droppt an einem zufälligen Ort, ein von sechs verschiedenen Powerups ausgewähltes Powerup.
+Das Flugzeug erscheint in regelmäßigen Abständen und wirft an einem zufälligen Ort, zufällig eines von sechs verschiedenen Powerups ab.
 
 ```
 function powerups() {
@@ -256,7 +257,7 @@ function powerups() {
     powerup.velocityY = 1.5;
 ```
 
-In dem Code oben, wird der Abwurf des Powerups beschrieben. Zunächst wird beschrieben wie zufällig ein Powerup von eins bis sechs ausgewählt wird. Dieses wird sichtbar bei der Position des Flugzeugs und erhält eine Geschwindigkeit nach unten. 
+In dem Code oben wird der Abwurf des Powerups beschrieben. Zunächst wird beschrieben, wie zufällig ein Powerup von eins bis sechs ausgewählt wird. Dieses wird sichtbar bei der Position des Flugzeugs und erhält eine Geschwindigkeit nach unten. 
 
 In dem unteren Code wird die Auswahl der Abwurfstelle für das Powerup beschrieben. Das Flugzeug erscheint nach 500 Ticks und es wird für den Abwurf eine zufällige X-Koordinate zwischen 100 und 300 gewählt. Das Flugzeug wird sichtbar und erhält eine Geschwindigkeit nach rechts. Wenn das Flugzeug über den rechten Spielfeldrand hinaus geflogen ist, wird es unsichtbar, auf seine Ursprungssituation gesetzt und der Tick-counter auf 0 gesetzt. Eben dieser beginnt von neuen und bei 500 fliegt das Flugzeug erneut.
 
@@ -284,7 +285,7 @@ Fügt man alle diese Commands zusammen, ergibt sich dieses Bild:
 
 ### Die Powerups<a name="Powerup"></a>
 
-Grundsätlich ist es immer sinnvoll powerups einzusammeln. Rote powerups bewirken eine negativen Effekt auf den Gegner, grüne powerups verbessern hingegen den auslösenden Spieler. Aktiviert werden die Powerups, indem ein Spieler den Sprite des powerups berührt. Der powerup wird daraufhin unsichtbar und die pup3(e/n) Variable wird bis 150 erhöht. Solange der Wert kleiner als 150 beträgt, wirkt der gewünschte Effekt. Danach werden die Variabelen pup2 und pup3(e/n) gleich Null gesetzt und der Effekt ist wieder ungültig. So wird dafür gesorgt, dass der jeweilige Effekt nur für eine bestimmte Zeit anhält und die Spieler wieder bereit sind ein neues Powerup aufunehmen. Der Code am Beispiel des Elches als Auslöser:
+Grundsätzlich ist es immer sinnvoll, powerups einzusammeln. Rote powerups bewirken eine negativen Effekt auf den Gegner, grüne powerups verbessern hingegen den auslösenden Spieler. Aktiviert werden die Powerups, indem ein Spieler den Sprite des powerups berührt. Der powerup wird daraufhin unsichtbar und die pup3(e/n) Variable wird bis 150 erhöht. Solange der Wert kleiner als 150 beträgt, wirkt der gewünschte Effekt. Danach werden die Variabelen pup2 und pup3(e/n) gleich Null gesetzt und der Effekt ist wieder ungültig. So wird dafür gesorgt, dass der jeweilige Effekt nur für eine bestimmte Zeit anhält und die Spieler wieder bereit sind ein neues Powerup aufunehmen. Der Code am Beispiel des Elches als Auslöser:
 
 ```
 if ((elk.isTouching(powerup)) && (powerup.visible===true)) {
@@ -351,7 +352,7 @@ https://youtu.be/OFgQbxa9s6o
 
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/GreenSHield.png" alt="image" width="100">
 
-Wird der grüne Schild Powerup aktiviert, passieren gleich mehrere Dinge. Es werden zum einen die Schussgeschwindigkeit erhöht und die Nachladezeit, durch hohe Werte in den "Nachladevariablen" stark verringert. Außerdem wird der Gegenspieler bei Kontakt mit dem Projektil so versetzt, dass er sofort stirbt:
+Wird der grüne Schild Powerup aktiviert, passieren gleich mehrere Dinge. Es werden zum einen die Schussgeschwindigkeit erhöht und die Nachladezeit wird durch hohe Werte in den "Nachladevariablen" stark verringert. Außerdem wird der Gegenspieler bei Kontakt mit dem Projektil so versetzt, dass er sofort stirbt:
 
 ```
 projectile3.velocityX = -30;
@@ -413,7 +414,7 @@ https://youtu.be/v8O6ZMtVA8o
 
 ### Der Sprung<a name="Sprung"></a>
 
-Der Sprung war das vermutlich langwierigste Element in unserem Spiel. Seit der Festlegung unseres Konzeptes haben wir stetig versucht den Sprung zu verbessern und zu überarbeiten bis zu unserer eigenen Zufriedenheit.
+Der Sprung war das vermutlich langwierigste Element in unserem Spiel. Seit der Festlegung unseres Konzeptes haben wir stetig versucht, den Sprung zu verbessern und zu überarbeiten bis zu unserer eigenen Zufriedenheit.
 Jetzt sieht der einfache Sprung im Code so aus:
 
 ```
@@ -425,8 +426,8 @@ Jetzt sieht der einfache Sprung im Code so aus:
     }
 ```
 
-Zunächst ist entscheidend, dass bei einer Betätigung der Taste "up", hier in Bezug auf Spieler 2, der Charakter eine Geschwindigkeit von 15 nach oben bekommt, der dann die eingestellte Gravitation entgegenwirkt.
-Zusätzlich dazu wird der Variable "up" ein Punkt zugerechnet. Dies ist entscheidend für die Umsetzung des Doppelsprungs, für den wir uns entschieden haben, um das Spiel spannend zu halten und den Spielern die Möglichkeit zu geben sich auch aus kniffeligen Situationen zu retten. In der ersten Zeile des Codes oben ist festgelegt, dass der Sprung nur durchgeführt wird, wenn die Variable "up" einen Wert von unter 2 hat, dass bedeutet, das man nach einem Doppelsprung nicht nocheinmal springen kann solange man in der Luft ist. 
+Zunächst ist entscheidend, dass bei einer Betätigung der Taste "up", hier in Bezug auf Spieler 2, der Charakter eine Geschwindigkeit von 15 nach oben bekommt, der dann der eingestellten Gravitation entgegenwirkt.
+Zusätzlich dazu wird der Variable "up" ein Punkt zugerechnet. Dies ist entscheidend für die Umsetzung des Doppelsprungs, für den wir uns entschieden haben, um das Spiel spannend zu halten und den Spielern die Möglichkeit zu geben, sich auch aus kniffeligen Situationen zu retten. In der ersten Zeile des Codes oben ist festgelegt, dass der Sprung nur durchgeführt wird, wenn die Variable "up" einen Wert von unter 2 hat, dass bedeutet, das man nach einem Doppelsprung nicht nocheinmal springen kann solange man in der Luft ist. 
 Um die Variable jedoch wieder gleich null zu setzen wird folgender Command benötigt:
 
 ```
@@ -434,7 +435,7 @@ Um die Variable jedoch wieder gleich null zu setzen wird folgender Command benö
       up = 0;
 ```
 
-Im Grunde genommen sagt dieser aus, dass wenn der Elch sich auf einer Plattform befindet, der Wert der Variable gleich null gesetzt wird. Unser erster Ansatz war der Command isTouching, welcher jedoch nur unregelmäßig funktionierte und insgesamt nicht zuverlässig war. In dem Code oben ist nun für jede Plattform der Parameter angegeben, der sicherstellt, das sich der Charakter auf der Plattform befindet. Dies ist zwar umständlich, aber eindeutig verlässlicher als unser erster Ansatz.
+Im Grunde genommen sagt dieser aus, dass wenn der Charakter sich auf einer Plattform befindet, der Wert der Variable gleich null gesetzt wird. Unser erster Ansatz war der Command isTouching, welcher jedoch nur unregelmäßig funktionierte und insgesamt nicht zuverlässig war. In dem Code oben ist nun für jede Plattform der Parameter angegeben, der sicherstellt, das sich der Charakter auf der Plattform befindet. Dies ist zwar umständlich, aber eindeutig verlässlicher als unser erster Ansatz.
 
 https://www.youtube.com/watch?v=GT7GeeBoAlM
 
@@ -453,12 +454,12 @@ elk.bounce(nini);
 nini.bounce(elk);
 ```
 
-Entgegen unserer ersten Annahme sind diese beiden Zeilen jedoch nicht genug. Um wirklich die gleiche Gewichtung zu haben, so dass nicht einer der beiden Charaktere nicht heruntergeschubst werden kann, muss man beide Zeilen in einer Funktion haben, jedoch durch ein drawSprites getrennt. 
+Entgegen unserer ersten Annahme sind diese beiden Zeilen jedoch nicht genug. Wir haben festgestellt, dass dann einer der beiden Charaktere nicht heruntergeschubst werden konnte. Um wirklich die gleiche Gewichtung zu haben und zu erreichen, dass jeder Charakter den anderen heruntergeschubsen kann, muss man beide Zeilen in einer Funktion haben, jedoch durch ein drawSprites getrennt. 
 
 
 ### Das Geschoss<a name="Geschoss"></a>
 
-Die Geschosse sollen den Spielern des Spiels eine weitere Möglichkeit eröffnen den Gegner herunterzuschubsen und somit einen Punkt zu erlangen. Sie sind normale Sprites, die sich ständig unsichtbar auf der Position des zugehörigen Charakters befinden. Pro Charakter sind es zwei Geschosse: Eines für den Schuss nach links und eines für den Schuss nach rechts. 
+Die Geschosse sollen den Spielern des Spiels eine weitere Möglichkeit eröffnen, den Gegner herunterzuschubsen und somit einen Punkt zu erlangen. Sie sind normale Sprites, die sich ständig unsichtbar auf der Position des zugehörigen Charakters befinden. Pro Charakter sind es zwei Geschosse: Eines für den Schuss nach links und eines für den Schuss nach rechts. 
 
 ```
 //projectile1
@@ -483,7 +484,7 @@ projectile4.scale = 0.1;
 projectile4.visible=false;
 ```
 
-Drückt einer der Spieler im Spiel nun eine der beiden Schusstasten (hier "Q" für Spieler 1), so wird noch einmal sichergestellt, dass sich das Geschoss auf der Position des Charakters befindet. Dies kommt insbesondere zur Geltun, wenn der Spieler gerade geschossen hat und das Geschoss technisch noch unterwegs ist. Daraufhin wird es sichtbar und erlangt eine Beschleunigung. Gleichzeitig wird die Variable q gleich null gesetzt, um einen erneuten Schuss überhaupt zu ermöglichen.
+Drückt einer der Spieler im Spiel nun eine der beiden Schusstasten (hier "Q" für Spieler 1), so wird noch einmal sichergestellt, dass sich das Geschoss auf der Position des Charakters befindet. Dies kommt insbesondere zur Geltung, wenn der Spieler gerade geschossen hat und das Geschoss technisch noch unterwegs ist. Daraufhin wird es sichtbar und erlangt eine Beschleunigung. Gleichzeitig wird die Variable q gleich null gesetzt, um einen erneuten Schuss überhaupt zu ermöglichen.
 
 ```
 if (keyWentDown("q")&&q>50&&nini.visible===true) {
@@ -499,7 +500,7 @@ https://www.youtube.com/watch?v=_kips1sJwew
 
 ### Der Tod<a name="Tod"></a>
 
-Als "tot" sehen wir einen "Charakter" sobald er eine Y-Koordinate von 360 überschreitet. Geschieht dies passieren einige andere Dinge gleichzeitig. Zunächst werden alle wirkenden Powerups auf dem "toten" Charakter ausgeschaltet, der Text "Player 1/2 died" erscheint, er wird unsichtbar und auf dem Scoreboard erscheint ein Punkt für den Gegner. Der folgende Code ist für den Tod von Spieler 1, für Spieler 2 gibt es den gleichen Code noch einmal.
+Als "tot" sehen wir einen "Charakter", sobald er eine Y-Koordinate von 360 überschreitet. Geschieht dies, passieren einige andere Dinge gleichzeitig. Zunächst werden alle wirkenden Powerups auf dem "toten" Charakter ausgeschaltet, der Text "Player 1/2 died" erscheint, der Charakter wird unsichtbar und auf dem Scoreboard erscheint ein Punkt für den Gegner. Der folgende Code ist für den Tod von Spieler 1, für Spieler 2 gibt es den gleichen Code noch einmal.
 
 ```
 function death() {
@@ -514,7 +515,7 @@ function death() {
     }
 ```
 
-Zusätzlich dazu geschehen einige andere Dinge in Abhängigkeit der Unsichtbarkeit des Charakters. Zunächst startet ein Timer, der nach 30 Ticks beide Spawnplattformen erscheinen lässt und auf ihnen beide Charaktere sichtbar macht. Ist dies geschehen wird der Timer wieder zurückgesetzt und ist "bereit" für den nächsten Tod Der Timer hilft den Spielern, indem beide Spieler Zeit haben sich auf eine neue Runde vorzubereiten und nicht überrascht sind wenn ihr Charakter plötzlich an einer anderen Stelle erscheint. Vorher gab es Komplikationen, da die Charaktere sehr weit am Rand oder sogar neben den an zufälligen Orten erscheinenden Plattformen gespawnt sind. Wir haben uns auch bewusst entschieden, dass beide Charaktere auf ihrer festen Spawnplattform erscheinen, damit sie nicht ineinander erscheinen. 
+Wenn der Charakter unsichtbar ist, geschieht zusätzlich noch Folgendes: Zunächst startet ein Timer, der nach 30 Ticks beide Spawnplattformen erscheinen lässt und auf ihnen beide Charaktere sichtbar macht. Ist dies geschehen, wird der Timer wieder zurückgesetzt und ist "bereit" für den nächsten Tod. Der Timer hilft den Spielern, indem beide Spieler Zeit haben, sich auf eine neue Runde vorzubereiten und nicht überrascht sind, wenn ihr Charakter plötzlich an einer anderen Stelle erscheint. Vorher gab es Komplikationen, da die Charaktere sehr weit am Rand oder sogar neben den an zufälligen Orten erscheinenden Plattformen gespawnt sind. Wir haben uns auch bewusst entschieden, dass beide Charaktere auf ihrer festen Spawnplattform erscheinen, damit sie nicht ineinander erscheinen. 
 
 ```
 if (nini.visible===false) {
@@ -559,7 +560,7 @@ fill(rgb(255, 255, 255));
 
 ## Herausforderungen<a name="4"></a>
 
-Während unseres Projektes wurden wir mit einigen Herausforderungen konfrontiert, die uns unterschiedlich stark gefordert haben. Das Thema mit dem wir uns vermutlich am längsten beschäftigt haben, war der Sprung. Wir hatten den persönlichen Anspruch diesen möglichst natürlich und dynamisch wirken zu lassen. Die Suche nach der optimalen Lösung hat uns eigentlich eindeutig zu lange beschäftigt.
+Während unseres Projektes wurden wir mit einigen Herausforderungen konfrontiert, die uns unterschiedlich stark gefordert haben. Das Thema, mit dem wir uns vermutlich am längsten beschäftigt haben, war der Sprung. Wir hatten den persönlichen Anspruch, diesen möglichst natürlich und dynamisch wirken zu lassen. Die Suche nach der optimalen Lösung hat uns eigentlich eindeutig zu lange beschäftigt.
 
 - Kollision
 Weiterbildung
@@ -567,4 +568,4 @@ Weiterbildung
  
 ## Schlusswort<a name="5"></a>
 
-Wir waren zu Beginn des Projektes sehr unsicher, da wir beide ohne jegliche Erfahrungen im Programmieren in dieses Projekt eingestiegen sind. Bemerkbar hat sich dies bereits bei der Auswahl des richtigen Programmes für uns gemacht, da wir auch auf Grund der sehr frei gestellten Aufgabe nicht von Beginn an ein festes Ziel vor Augen hatten. Diese Startschwierigkeiten relativierten sich mit der gewonnenen Sicherheit im Programm nach einigen Tagen der intensiveren Auseinandersetzung mit diesem. Trotz dessen hatten wir auch nach einigen Wochen keine Konzeptidee von der wir zu 100 Prozent überzeugt waren. Der Durchbruch gelang uns mit der Idee des endgültigen Konzepts und den ersten Vorstellungen eines fertigen Programms. Von diesem Moment an waren wir wieder hochmotiviert und arbeiteten mit viel Spaß an unserem Projekt. Diese Einstellung hat sich bis zum Ende des Projektes durchgezogen und wir waren zum Schluss auf Grund des vielen neuen Wissens, das wir erlangt hatten, in der Lage alle unsere Wünsche umzusetzen. So ergibt sich bei uns trotz des holprigen Starts ein insgesamt sehr positives Endbild über unser Projekt und das Programm "Gamelab", von dem wir zu Beginn auch nicht total überzeugt waren.
+Wir waren zu Beginn des Projektes sehr unsicher, da wir beide ohne jegliche Erfahrungen im Programmieren in dieses Projekt eingestiegen sind. Bemerkbar hat sich dies bereits bei der Auswahl des richtigen Programmes für uns gemacht, da wir auch auf Grund der sehr frei gestellten Aufgabe nicht von Beginn an ein festes Ziel vor Augen hatten. Diese Startschwierigkeiten relativierten sich mit der gewonnenen Sicherheit im Programm nach einigen Tagen der intensiveren Auseinandersetzung mit diesem. Trotzdem hatten wir auch nach einigen Wochen keine Konzeptidee, von der wir zu 100 Prozent überzeugt waren. Der Durchbruch gelang uns mit der Idee des endgültigen Konzepts und den ersten Vorstellungen eines fertigen Programms. Von diesem Moment an waren wir wieder hochmotiviert und arbeiteten mit viel Spaß und hohem Zeitaufwand an unserem Projekt. Diese Einstellung hat sich bis zum Ende des Projektes durchgezogen und wir waren zum Schluss aufgrund des vielen neuen Wissens, das wir erlangt hatten, in der Lage, alle unsere Ideen umzusetzen, so dass wir am Schluss richtig stolz auf unser Spiel sind und selbst Spaß hatten, es zu spielen. Zusammenfassend ziehen wir trotz des holprigen Starts ein insgesamt sehr positives Fazit über unser Projekt und das Programm "Gamelab", von dem wir zu Beginn auch nicht total überzeugt waren.
