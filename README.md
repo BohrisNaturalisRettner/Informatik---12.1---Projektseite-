@@ -10,7 +10,7 @@ Schuljahr 18/19
 [1. Vorwort](#1)                   
 [2. Beschreibung](#2)  
 [3. Erläuterung](#3)  
-[4. Herausforderungen](#4)
+[4. Herausforderungen](#4)                                                                                              
 [5. Schlusswort](#5)
 
 ## Vorwort<a name="1"></a>
@@ -559,6 +559,12 @@ fill(rgb(255, 255, 255));
 
 ## Herausforderungen<a name="4"></a>
 
+Während unseres Projektes wurden wir mit einigen Herausforderungen konfrontiert, die uns unterschiedlich stark gefordert haben. Das Thema mit dem wir uns vermutlich am längsten beschäftigt haben, war der Sprung. Wir hatten den persönlichen Anspruch diesen möglichst natürlich und dynamisch wirken zu lassen. Die Suche nach der optimalen Lösung hat uns eigentlich eindeutig zu lange beschäftigt.
 
+- Kollision
+Weiterbildung
+
+ 
 ## Schlusswort<a name="5"></a>
 
+Wir waren zu Beginn des Projektes sehr unsicher, da wir beide ohne jegliche Erfahrungen im Programmieren in dieses Projekt eingestiegen sind. Bemerkbar hat sich dies bereits bei der Auswahl des richtigen Programmes für uns gemacht, da wir auch auf Grund der sehr frei gestellten Aufgabe nicht von Beginn an ein festes Ziel vor Augen hatten. Diese Startschwierigkeiten relativierten sich mit der gewonnenen Sicherheit im Programm nach einigen Tagen der intensiveren Auseinandersetzung mit diesem. Trotz dessen hatten wir auch nach einigen Wochen keine Konzeptidee von der wir zu 100 Prozent überzeugt waren. Der Durchbruch gelang uns mit der Idee des endgültigen Konzepts und den ersten Vorstellungen eines fertigen Programms. Von diesem Moment an waren wir wieder hochmotiviert und arbeiteten mit viel Spaß an unserem Projekt. Diese Einstellung hat sich bis zum Ende des Projektes durchgezogen und wir waren zum Schluss auf Grund des vielen neuen Wissens, das wir erlangt hatten, in der Lage alle unsere Wünsche umzusetzen. So ergibt sich bei uns trotz des holprigen Starts ein insgesamt sehr positives Endbild über unser Projekt und das Programm "Gamelab", von dem wir zu Beginn auch nicht total überzeugt waren.
