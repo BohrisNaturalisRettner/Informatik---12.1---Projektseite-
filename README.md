@@ -287,6 +287,7 @@ Fügt man alle diese Commands zusammen, ergibt sich dieses Bild:
 
 Grundsätlich ist es immer sinnvoll powerups einzusammeln. Rote powerups bewirken eine negativen Effekt auf den Gegner, grüne powerups verbessern hingegen den auslösenden Spieler. Aktiviert werden die Powerups, indem ein Spieler den Sprite des powerups berührt. Der powerup wird daraufhin unsichtbar und die pup3(e/n) Variable wird bis 150 erhöht. Solange der Wert kleiner als 150 beträgt, wirkt der gewünschte Effekt. Danach werden die Variabelen pup2 und pup3(e/n) gleich Null gesetzt und der Effekt ist wieder ungültig. So wird dafür gesorgt, dass der jeweilige Effekt nur für eine bestimmte Zeit anhält und die Spieler wieder bereit sind ein neues Powerup aufunehmen. Der Code am Beispiel des Elches als Auslöser:
 
+```
 if ((elk.isTouching(powerup)) && (powerup.visible===true)) {
       powerup.visible = false;
       pup3e=1;
@@ -299,29 +300,77 @@ if ((elk.isTouching(powerup)) && (powerup.visible===true)) {
       pup3e = 0;
       pup2 = 0;
     }
-    
+```    
 
 Roter BlitzPowerup<a name="RedBolt"></a>
-
+```
+nini.velocityY = nini.velocityY+10;
+elk.velocityY = elk.velocityY+10;
+```
 https://youtu.be/-xrsTx3qcIk
 
 Grüner Blitz Powerup<a name="GreenBolt"></a>
-
+```
+up = 0;
+w = 0;
+```
 https://youtu.be/-4X9b7YCLho
 
 Roter Schild Powerup<a name="RedShield"></a>
+```
+q = 0;
+e = 0;
+      
+alt = 0;
+shift = 0;
+```
 
 https://youtu.be/OFgQbxa9s6o
 
 Grüner Schild Powerup<a name="GreenShield"></a>
+```
+projectile3.velocityX = -30;
+      projectile4.velocityX = 30;
+      if (projectile3.isTouching(nini)||projectile4.isTouching(nini)){
+      nini.x = 300;
+      nini.y = 380;
+      }
+      alt = 100;
+      shift = 100;
 
+projectile1.velocityX = -30;
+      projectile2.velocityX = 30;
+      if (projectile1.isTouching(elk)||projectile1.isTouching(elk)){
+      elk.x = 250;
+      elk.y = 380;
+      }
+      q = 100;
+      e = 100;
+```
 https://youtu.be/fRlSWS0Md9c
 
 Roter Stern Powerup<a name="RedStar"></a>
+```
+nini.scale = 0.05;
+      } else {
+      nini.scale = 0.15;
+elk.scale = 0.05;
+      } else {
+      elk.scale = 0.15;
+```
 
 https://youtu.be/XN6scC1JFoU
 
 Grüner Stern Powerup<a name="GreenStar"></a>
+```
+elk.scale = 0.3;
+      } else {
+      elk.scale = 0.15;
+
+nini.scale = 0.3;
+      } else {
+      nini.scale = 0.15;
+```
 
 https://youtu.be/v8O6ZMtVA8o
 
