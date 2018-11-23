@@ -1,5 +1,8 @@
 # Projektseite "Smooosh"
-von Tim Wähner und David Rettmann, 12e
+von Tim Wähner und David Rettmann
+Stormarnschule Ahrensburg 
+Klasse 12e
+Schuljahr 18/19
 
 
 ## Inhalt
