@@ -10,7 +10,7 @@ Schuljahr 18/19
 [1. Vorwort](#1)                   
 [2. Beschreibung](#2)  
 [3. Erläuterung](#3)    
-
+[4. Schlusswort](#4)
 
 ## Vorwort<a name="1"></a>
 
@@ -301,15 +301,18 @@ if ((elk.isTouching(powerup)) && (powerup.visible===true)) {
     }
 ```    
 
+
 #### Roter BlitzPowerup<a name="RedBolt"></a>
 
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/RedBolt.png" alt="image" width="100">  
 
 Wenn der Rote Blitz Powerup aktiviert wird, wird der Gegenspieler stark nach unten beschleunigt, was das Springen verhindert:
+
 ```
 nini.velocityY = nini.velocityY+10;
 elk.velocityY = elk.velocityY+10;
 ```
+
 https://youtu.be/-xrsTx3qcIk
 
 
@@ -318,10 +321,12 @@ https://youtu.be/-xrsTx3qcIk
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/GreenBolt.png" alt="image" width="100">
 
 Bei der Aktivierung des Grünen Blitz Powerups, werden die Sprungvariablen des auslösenden Spielers gleich Null gesetzt, sodass dieser unbegrenzt springen kann:
+
 ```
 up = 0;
 w = 0;
 ```
+
 https://youtu.be/-4X9b7YCLho
 
 
@@ -330,6 +335,7 @@ https://youtu.be/-4X9b7YCLho
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/RedShield.png" alt="image" width="100">
 
 Der Rote Schild Powerup verhindert ein Schießen des Gegenspielers, indem er die "Nachladevariablen" des Gegenspielers gleich Null setzt:
+
 ```
 q = 0;
 e = 0;
@@ -337,6 +343,7 @@ e = 0;
 alt = 0;
 shift = 0;
 ```
+
 https://youtu.be/OFgQbxa9s6o
 
 
@@ -345,6 +352,7 @@ https://youtu.be/OFgQbxa9s6o
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/GreenSHield.png" alt="image" width="100">
 
 Wird der grüne Schild Powerup aktiviert, passieren gleich mehrere Dinge. Es werden zum einen die Schussgeschwindigkeit erhöht und die Nachladezeit, durch hohe Werte in den "Nachladevariablen" stark verringert. Außerdem wird der Gegenspieler bei Kontakt mit dem Projektil so versetzt, dass er sofort stirbt:
+
 ```
 projectile3.velocityX = -30;
       projectile4.velocityX = 30;
@@ -364,6 +372,7 @@ projectile1.velocityX = -30;
       q = 100;
       e = 100;
 ```
+
 https://youtu.be/fRlSWS0Md9c
 
 
@@ -380,6 +389,7 @@ elk.scale = 0.05;
       } else {
       elk.scale = 0.15;
 ```
+
 https://youtu.be/XN6scC1JFoU
 
 
@@ -397,15 +407,53 @@ nini.scale = 0.3;
       } else {
       nini.scale = 0.15;
 ```
+
 https://youtu.be/v8O6ZMtVA8o
 
 
 ### Der Sprung<a name="Sprung"></a>
 
+Der Sprung war das vermutlich langwierigste Element in unserem Spiel. Seit der Festlegung unseres Konzeptes haben wir stetig versucht den Sprung zu verbessern und zu überarbeiten bis zu unserer eigenen Zufriedenheit.
+Jetzt sieht der einfache Sprung im Code so aus:
+
+```
+ } else if (keyWentDown("up")&&up<2) {
+      up = up+1;
+      elk.velocityY = -15;
+    } else {
+      elk.velocityX = 0;
+    }
+```
+
+Zunächst ist entscheidend, dass bei einer Betätigung der Taste "up", hier in Bezug auf Spieler 2, der Charakter eine Geschwindigkeit von 15 nach oben bekommt, der dann die eingestellte Gravitation entgegenwirkt.
+Zusätzlich dazu wird der Variable "up" ein Punkt zugerechnet. Dies ist entscheidend für die Umsetzung des Doppelsprungs, für den wir uns entschieden haben, um das Spiel spannend zu halten und den Spielern die Möglichkeit zu geben sich auch aus kniffeligen Situationen zu retten. In der ersten Zeile des Codes oben ist festgelegt, dass der Sprung nur durchgeführt wird, wenn die Variable "up" einen Wert von unter 2 hat, dass bedeutet, das man nach einem Doppelsprung nicht nocheinmal springen kann solange man in der Luft ist. 
+Um die Variable jedoch wieder gleich null zu setzen wird folgender Command benötigt:
+
+```
+ if (elk.x >= ground.x-60 && elk.x <= (ground.x+60) && elk.y >= ground.y - 75|| elk.x >= ground2.x-45 && elk.x <= ground2.x+45 && elk.y >= ground2.y-85 || elk.x >= ground3.x-50 && elk.x <= ground3.x+50 && elk.y >= ground3.y-65) {
+      up = 0;
+```
+
+Im Grunde genommen sagt dieser aus, dass wenn der Elch sich auf einer Plattform befindet, der Wert der Variable gleich null gesetzt wird. Unser erster Ansatz war der Command isTouching, welcher jedoch nur unregelmäßig funktionierte und insgesamt nicht zuverlässig war. In dem Code oben ist nun für jede Plattform der Parameter angegeben, der sicherstellt, das sich der Charakter auf der Plattform befindet. Dies ist zwar umständlich, aber eindeutig verlässlicher als unser erster Ansatz.
+
+https://www.youtube.com/watch?v=GT7GeeBoAlM
 
 
 ### Die Schubserei<a name="Schubserei"></a>
 
+Einer der Kernpunkte unseres Spiels ist das Herunterschubsen des Gegeners von der Plattform. Möglich ist dies durch folgende Zeilen im Code:
+
+```
+elk.bounce(nini);
+```
+ 
+ und
+ 
+```
+nini.bounce(elk);
+```
+
+Entgegen unserer ersten Annahme sind diese beiden Zeilen jedoch nicht genug. Um wirklich die gleiche Gewichtung zu haben, so dass nicht einer der beiden Charaktere nicht heruntergeschubst werden kann, muss man beide Zeilen in einer Funktion haben, jedoch durch ein drawSprites getrennt. 
 
 
 ### Das Geschoss<a name="Geschoss"></a>
@@ -446,7 +494,7 @@ if (keyWentDown("q")&&q>50&&nini.visible===true) {
           q = 0;
 ```
 
-Die Schüsse in "Smooosh" sehen so aus: <a href="https://www.youtube.com/watch?v=_kips1sJwew">"Geschosse in 'Smooosh'"<a/>.
+https://www.youtube.com/watch?v=_kips1sJwew
 
 
 ### Der Tod<a name="Tod"></a>
@@ -485,7 +533,7 @@ if (nini.visible===false) {
     }
 ```
 
-Ein Tod in unserem Spiel sieht dann so aus: <a href="https://www.youtube.com/watch?v=zwK5xwTkhxk">"Tode in 'Smooosh'"<a/>.
+https://www.youtube.com/watch?v=zwK5xwTkhxk
 
 
 ### Das Scoreboard<a name="Scoreboard"></a>
@@ -509,24 +557,5 @@ fill(rgb(255, 255, 255));
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Probleme und Lösungen<a name="4"></a>
+## Schlusswort<a name="4"></a>
 jhg
