@@ -238,6 +238,47 @@ elk.collide(ground2);
 elk.collide(ground3);
 ```
 
+Das letzte Feature ist das Flugzeug, das vorbei fliegt und die Powerups droppt. 
+
+```
+//flugzeug
+var flugzeug = createSprite(-100, 100);
+flugzeug.setAnimation("planeRed1_1");
+```
+
+Das Flugzeug erscheint in regelmäßigen Abständen und droppt an einem zufälligen Ort, ein von sechs verschiedenen Powerups ausgewähltes Powerup.
+
+```
+function powerups() {
+  if (flugzeug.x==abwurf) {
+    pup2 = randomNumber(1, 6 );
+    powerup.visible = true;
+    powerup.x = flugzeug.x;
+    powerup.y = flugzeug.y;
+    powerup.velocityY = 1.5;
+```
+
+In dem Code oben, wird der Abwurf des Powerups beschrieben. Zunächst wird beschrieben wie zufällig ein Powerup von eins bis sechs ausgewählt wird. Dieses wird sichtbar bei der Position des Flugzeugs und erhählt eine Beschleunigung nach unten. 
+
+In dem unteren Code wird die Auswahl der Abwurfstelle für das Powerup beschrieben. Das Flugzeug erscheint nach 500 Ticks und es wird für den Abwurf eine zufällige X-Koordinate zwischen 100 und 300 gewählt. Das Flugzeug wird sichtbar und erhält eine Geschwindigkeit nach rechts. Wenn das Flugzeug über den rechten Spielfeldrand hinaus geflogen ist, wird es unsichtbar, auf seine Ursprungssituation gesetzt und der Tick-counter auf 0 gesetzt. Eben dieser beginnt von neuen und bei 500 fliegt das Flugzeug erneut.
+
+```
+function jet() {
+    if (f===500) {
+    abwurf = randomNumber(100, 300);
+    flugzeug.visible = true;
+    flugzeug.velocityX = 3;
+  }
+    if (flugzeug.x>=450) {
+    flugzeug.x=-100;
+    flugzeug.velocityX = 0;
+    flugzeug.visible = false;
+    f = 0;
+    drawSprites();
+  }
+}
+```
+
 Fügt man alle diese Commands zusammen, ergibt sich dieses Bild: 
 <img src="https://github.com/BohrisNaturalisRettner/ToDo/blob/master/Screenshot%20(36).png" alt="image" width="500">
 
